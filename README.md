@@ -38,4 +38,5 @@ I saw some forum posts that suggest that the following might work (on OS X) as a
 
 - [convert batch of files via textutil](http://hints.macworld.com/article.php?story=20060309220909384) 
 - [My question about this to Metafilter](http://ask.metafilter.com/248126/Convert-Many-Word-Documents-to-Markdown#3604336)
+- [using bash loops for bash conversion](http://blog.silentumbrella.com/2009/10/08/bash-loops-are-fun-for-batch-conversion.html)
 
