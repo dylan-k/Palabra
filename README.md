@@ -1,21 +1,11 @@
 Palabra
 =======
 
-Tools for leaving Microsoft Word behind.
+Tools for leaving Microsoft Word behind, among other things.
 
-Over the past several days I have read lots and lots and lots of blog posts from writers who say, basically: "I'm going to quit using a word processor and start using text files instead." It seems that most of these writers have chosen to use Markdown as a way to apply formatting to their text documents, without ever moving their fingers from the keys. How nice! These writers all extoll the virtues of text plain text files: it's future-proof, it'll help my experiments with version control for writers -- so I'm sold! From now on, for me, I'll save my writings as some sort of text file.
-
-But what about everything I've already written? 
-
-I've been writing in Microsoft Word since at least 1995 and in that time I have amassed quite the collection of files: .doc files, .docx files, .rtf files, .html files, you name it, but not one of these is a plain text file. 
-
-## How do I Convert Many Microsoft Word files Into Plain Text
-
-note: I should start by saying that this process is not as easy as it should be, for the average writer. I'm sharing what (barely) worked for me, in the hopes of finding a better solution. I'm just learning, here.
-
-If you're going to try this at home, back everything up. If you're like me, and you've got a lifetime of writings to convert from one file format to another, you do not want to risk losing anything because you screwed something up, so make a backup copy. Hell, make three.
-
-So, how do I convert so many files? Should I just open each one up and do "save as" over and over and over again? Well, I could do that, but that would take forever! I decided, instead, to try a different method, one that might be able to be repeated by others and improved upon.
+note: I'm just a writer looking for tools to help other writers do more powerful things with their text. This is my first Github project. I'm new to all of this and I could use your help! I've blogged about my thoughts:
+http://nocategories.net/tag/text-processing/
+http://nocategories.net/ephemera/leaving-word-behind/
 
 ##Tools to do the Work
 
@@ -52,7 +42,7 @@ Here are some tips and tricks that helped me along the way
 - [rename each text file according to its first line of text](https://gist.github.com/dylan-k/6531959)
 - [how to add .txt file extension to a batch of files with no file extension.](https://gist.github.com/dylan-k/6518333)
 
-## useful links
+## other useful links
 
 - [convert batch of files via textutil](http://hints.macworld.com/article.php?story=20060309220909384) 
 - [My question about this to Metafilter](http://ask.metafilter.com/248126/Convert-Many-Word-Documents-to-Markdown#3604336)
