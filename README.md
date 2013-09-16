@@ -26,7 +26,7 @@ I saw some forum posts that suggest that the following Terminal command might wo
 1. [Install Pandoc](http://johnmacfarlane.net/pandoc/installing.html)
 2. Grab [the two shell scripts that I wrote](https://github.com/dylan-k/Palabra). I've posted them to Github and cleverly named them "Palabra".
 3. Install the two files convert1.sh and convert2.sh into a directory full of .doc files that you would like to convert into Markdown-flavoured .txt files.
-4. Point your terminal to that directory and from the terminal type "sh convert1.sh" This will convert all the .doc files in the directory into html files. (edit the file to say .doc if that's the kind you want to change)
+4. Point your terminal to that directory and from the terminal type "sh convert1.sh" This will convert all the .doc files in the directory into html files. (edit the file to say .docx if that's the kind you want to change)
 5. then type "sh convert2.sh". This will convert all the html files you just made in step 2 into Markdown-flavoured .txt files.
 4. Done!
 
