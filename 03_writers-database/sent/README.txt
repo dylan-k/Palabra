@@ -1,0 +1,1 @@
+Currently, the database stores a copy of each manuscript, as-submitted, within the database, in a BLOB field. If this proves unstable, change the field to contain TEXT instead, just the filename, and store the files in this directory for safe-keeping. If you use this method, be sure not to rename any of the files once they're in here and described by the database. 
