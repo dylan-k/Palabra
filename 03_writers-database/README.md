@@ -1,11 +1,5 @@
 # Writer's Database
 
-v 0.3
-
-changelog:
-- additional fields added to 'venues' table
-- submissions form adjusted for adding new manuscripts and venues
-
 This is a database tool intended to help writers to keep track of their submissions, publications they'd like to submit to, and the manuscripts that they would like to publish. It is based on several sources. 
 
 - [Writer's Database by Dmitri Popov](http://www.linux-magazine.com/w3/issue/103/084-086_workspace.pdf), part of [The Writer's Tools Extension for OpenOffice.org and LibreOffice](https://code.google.com/p/writertools/)
@@ -22,3 +16,14 @@ Documentation is coming soon. Please feel free to ask questions. For now, here's
 ## License
 
 This database is licensed under the GNU GPL, as was the source it is derived from.
+
+## Changelog
+
+v 0.4 changelog:
+- changed sub_file data field. It now only stores filenames rather than the complete binary file. This was done to reduce risk of bloat/instability.
+- added buttons to the submissions form. These buttons should help the sub-forms to add new entries for manuscript or venue as needed.
+- cosmetic changes, particularly to the submissions form.
+
+v 0.3 changelog:
+- additional fields added to 'venues' table
+- submissions form adjusted for adding new manuscripts and venues
