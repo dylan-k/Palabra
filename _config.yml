@@ -5,7 +5,8 @@ pygments: true
 permalink: pretty
 markdown: redcarpet
 markdown_ext:  txt
-permalink: :title.html
+baseurl: /Palabra
+permalink: /:title.html
 github:
   # enables "edit" link
   repo: 'dylan-k/Palabra'
