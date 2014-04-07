@@ -1,0 +1,122 @@
+---
+layout: post
+title: Tutorial for the writer who utilizes multiple work spaces.
+---
+
+# Palabra: Tips and Tools for 21st Century Writers
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+
+## A tutorial for the writer who utilizes multiple work spaces.
+
+Working in multiple spaces doesn't have to involve emailing files or
+jump drives. Utilizing a Git respository within GitHub enables any
+machine with internet access to become a native work environment. This
+tutorial assumes that you have already learned how to set up an initial
+git respository.
+
+### Step 1: Set up a GitHub account
+
+Once you have your Git respository set up on one machine, it is very
+easy to utilize GitHub as a remote respository. By submitting your
+project to the remote GitHub respository, you can then access and edit
+your project from any machine with internet access. Setting up a GitHub
+repository is both simple and free.
+
+To set up your account go to [GitHub](http://github.com/) and select
+'sign up now'. This directs you to a page that allows you to select the
+desired package. You will then be prompted to enter your personal
+information. There is also a field for SSH keys, but that can be left
+blank for now. After you select 'create your account', you will be taken
+to your account dashboard.
+
+Select 'Account Settings' from the top navigation bar. On the Account
+Settings page you can then enter your SSH keys. There is a very helpful
+tutorial for this step if you select 'Need help with public keys?' from
+above the SSH text fields. After you add your SSH key you are then ready
+to create your first GitHub repository.
+
+![screenshot](media/img/Tutorial-Everywhere-Shot1.jpg)
+
+### Step 2: Create your GitHub repository
+
+Go to your GitHub account dashboard and select 'Create a Repository'.
+Enter your project name and description in the designated fields and
+select 'Create Repository'.
+
+![Creating a Repository](media/img/Tutorial-Everywhere-Shot2.jpg)
+
+You will then see a page of instructions. Since this tutorial assumes
+that you already have an existing repository on your local machine, you
+will be using the git commands under 'Existing Git Repo?' which are also
+displayed below.
+
+-   `Enter this line into your git command terminal:`cd
+    existing\_git\_repo
+
+The line above is going to direct git to your existing repository on
+your local machine. You will then need to direct this repository to your
+remote GitHub account and enter it as the new repository you just
+created by entering the following two separate commands;
+
+-   `$` git remote add origin git@github.com:UserName/test-project.git
+-   `$` git push origin master
+
+Your project folders and files that you had on your local machine's
+repository will now be duplicated under the remote repository you have
+just created on GitHub. You can always access your GitHub repositories
+from your dashboard view.
+
+### Step 3: Make and Save Changes from Another Machine
+
+You now have your project set up on a remote repository in GitHub. The
+rest of the tutorial assumes that you are logged out of GitHub and that
+you have moved to a different computer that has Git already installed.
+
+Using any other computer with git installed, go to GitHub and log in to
+your account. Once you are logged in, you should be on the dashboard of
+your account. You can then view your repositories and select the one you
+wish to work on.
+
+![screenshot](media/img/Tutorial-Everywhere-Shot3.jpg)
+
+After selecting your repository, you will be taken to the repository's
+main branch. Here you can see the url of the project which you will need
+shortly. You will need to open the Git command terminal on your computer
+and enter the commands below in order to clone this remote repository so
+you can make changes to your project. The first command will tell Git
+where to put the clone assuming you want the project to be cloned in a
+folder named 'projects'.
+
+-   `$`cd projects
+
+You will then need to create the clone of the remote repository with the
+line below. The second half of the line can be located in GitHub after
+the HTTP READ-ONLY text.
+
+![screenshot](media/img/Tutorial-Everywhere-Shot4.jpg)
+
+-   `$` git clone git@github.com:testUser/git-for-writers.git
+
+After running the last line, the newly cloned project should appear in
+your local projects folder. To check this, run the line git status which
+will return your current location. From this point you can go ahead and
+edit your project files in this local copy of the project. When you are
+ready to save these changes, insert the lines below:
+
+-   `This line adds your changes to a queue.` git add .
+-   `This line inserts a memo and clarifies that these changed files need to be commited to the local                             repository and updated in the remote repository.                                         `
+    git commit -m "Insert a memo here to describe changes made"
+-   `This command will return your location`pwd
+-   `$` git push origin master
+
+This last line commits the changes to the remote repository. You can now
+see that changes have been made on the GitHub repository detail page.
+
+-   [Home](index.htm)
+-   [Resources](resources.htm)
+-   [About](/about/)
+
+

@@ -1,0 +1,103 @@
+---
+layout: post
+title: Table of Contents (in progress)
+---
+
+# Palabra: Tips and Tools for 21st Century Writers
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+## A Different Approach to Revision and Collaboration
+
+**Git for Writers** introduces the free and open source distributed
+content versioning system Git specifically for digital writers. Although
+Git is originally a tool for software development, it can be used to
+track history and open up the writing process for any digital formats
+that are plain text, including XHTML/HTML, XML, CSS, JavaScript, and
+even templating systems in PHP (e.g., WordPress or Drupal).
+
+But Git is more than just another tool, however. It suggests an entirely
+different model of revision and version tracking than track-changes
+features in word processors. Git and related services, such as GitHub,
+also offer a model of collaboration that is much more expansive and
+scalable than wikis.
+
+**Git for Writers** is structured to support writers working alone,
+perhaps on different computers (e.g., a laptop and a desktop or
+wherever), as well as multiple writers working together. For each
+writing situation, **Git for Writers** offers a set of concepts,
+practical hands-on use of Git and related services, and three sample
+scenarios for how Git can change the way you write.
+
+### Alone
+
+#### Concepts
+
+1.  Git Versus Track Changes
+2.  Maintaining History
+3.  Possible Futures
+4.  Test Like Nobody’s Watching
+
+#### Hands-On
+
+1.  Git Setups
+2.  [Creating a New Project](hands_on/new_project.htm)
+3.  [Staging a Commit](hands_on/stage_commit.htm)
+4.  [Making a Commit](hands_on/make_commit.htm)
+5.  Reviewing History
+6.  Rolling Back
+7.  Branching Sideways
+
+#### Scenarios
+
+1.  Plain Text To-Do List
+2.  Personal Web Site
+3.  WordPress Template
+
+### Wherever
+
+#### Concepts
+
+1.  Git Versus Emailed Files
+2.  Into the Woods---
+3.  One Project, Many Machines
+4.  Starting from Other Than Scratch
+5.  ---Back to Civilization
+6.  Public/Private
+
+#### Hands-On
+
+1.  GitHub Setup
+2.  Pushing
+3.  Pulling
+4.  Branching
+5.  Tagging
+
+#### Scenarios
+
+1.  Remote Backup (By Default)
+2.  Research and Writing
+3.  Managing Website Updates
+
+### Together
+
+#### Concepts
+
+1.  Git Versus Wiki
+2.  Everybody’s Everything
+3.  Optimistic Locking
+4.  Conflict Resolution
+
+#### Hands-On
+
+1.  GitHub: Forking
+2.  GitHub: Collaborators
+3.  Tracking Branches
+4.  Pull Requests
+
+#### Scenarios
+
+1.  Organization Website
+2.  Collaborative Essay
+3.  Git for Writers

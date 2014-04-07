@@ -1,0 +1,42 @@
+name: "Git for Writers"
+description: "A guide to version tracking, revision, and collaboration for open-source writing."
+signature: "<div id='footer'> <p class='copyright'> Some rights reserved. Content licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/us/'> Creative Commons Attribution-Share Alike 3.0 United States License </a>. <a href='https://github.com/dylan-k/Palabra'>Project repository</a> hosted at <a href='http://github.com'>GitHub</a>. Learn <a href='about/participate.htm'>how to contribute</a> to this project. </p> </div>"
+pygments: true
+permalink: pretty
+markdown: redcarpet
+markdown_ext:  txt
+permalink: /:title.html
+github:
+  # enables "edit" link
+  repo: 'dylan-k/git-for-writers'
+  branch: gh-pages
+prose:
+  siteurl: 'http://prose.io/#dylan-k/git-for-writers/edit/gh-pages'
+  relativeLinks: 'https://github.com/dylan-k/git-for-writers/blob/gh-pages/links.jsonp'
+  # uncomment to limit editing to the _posts directory
+  #rooturl: '_posts'
+  media: 'media'
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "tags"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          options:
+            - name: "Tag"
+              value: "tag"
+    _posts/static:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: ""

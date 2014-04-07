@@ -1,0 +1,54 @@
+---
+layout: post
+title: 'Git for Writers: Making a Commit'
+---
+
+# Palabra: Tips and Tools for 21st Century Writers
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+
+## Making a Commit
+
+Explain what making a commit does.
+
+### Check Status
+
+Explain how to check status (to see which files are staged).
+
+    git status
+
+Explain response from Git.
+
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Changes to be committed:
+    #   (use "git rm --cached <file>---" to unstage)
+    #
+    #   new file:   filename.html
+    #   new file:   filename2.html
+
+### Commit Staged Files
+
+Explain how to commit all staged files. Explain what the -m flag means.
+
+    git commit -m"I added a new paragraph"
+
+Explain response from Git.
+
+    2 files changed, 0 insertions(+), 0 deletions(-)
+
+### Stage and Commit in One Step
+
+Explain how to stage and commit all changed file at once.
+
+    git commit -am"I made a lot of changes"
+
+-   [Home](index.htm)
+-   [Resources](resources.htm)
+-   [About](/about/)
+
+

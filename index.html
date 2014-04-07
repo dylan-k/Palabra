@@ -1,64 +1,65 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Palabra by dylan-k</title>
+---
+layout: default
+title: "Palabra"
+description: A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Palabra</h1>
-        <p>Tips, Tools and Technology for Writers</p>
+<div class="row marketing">
+        <div class="col-lg-6">
+          <h4><a href="http://nocategories.net/ephemera/leaving-word-behind/">Writing in Plain Text</a></h4>
+          <p>Writers love their word processors and so do editors, but there is another way to work. By using text files instead of word docs, you'll be able to do new things with your documents, to do old things more efficiently, and to save your work in better ways. Also, it's very easy to open plain text files in any word processor, so you can always have the best of both worlds.</p>
 
-        <p class="view"><a href="https://github.com/dylan-k/Palabra">View the Project on GitHub <small>dylan-k/Palabra</small></a></p>
+          <h4><a href="http://chronicle.com/blogs/profhacker/pandoc-converts-all-your-text-documents/38700">Converting Old Files to New Formats</a></h4>
+          <p>Anyone who has been writing for years is likely to have their work saved in a variety of different formats. Tools like <a href="http://johnmacfarlane.net/pandoc/README.html">Pandoc</a> can help you to get everything into one, archival, easy-to-use format. This project also contains <a href="https://github.com/dylan-k/Palabra/tree/master/scripts">a small number of open-source scripts that are useful for writers to convert their files</a>. Please feel free to request or contribute any additions to these.</p>
+
+          <h4><a href="http://chronicle.com/blogs/profhacker/consider-revision-control-methods-for-documents/25683">Learning to Use Version Control</a></h4>
+          <p>Many of today's word processors have a "track changes" feature which is useful, but fullblown version control software is even more useful. </p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4><a href="http://www.macworld.com/article/1161549/forget_fancy_formatting_why_plain_text_is_best.html">Formatting with Plain Text</a></h4>
+          <p>It sounds contradictory to the "plain" part, but with plain text there are a couple of ways to indicate formatting. <a href="https://daringfireball.net/projects/markdown/">Markdown</a> is simple and easy to learn for basic formatting. <a href="http://www.andy-roberts.net/writing/latex">LaTEX</a> is incredibly powerful and moves beyond basic format to control typesetting, layout, figures, tables, contents, references, citations, etc.</p>
+
+          <h4><a href="http://chronicle.com/blogs/profhacker/getting-started-with-a-github-repository/47393">Build a Repository of your Writings</a></h4>
+          <p>Once you have a text file or group of related text files, you can <a href="http://chronicle.com/blogs/profhacker/getting-started-with-a-github-repository/47393">publish your writings to a repository</a>. A repository can be public or private and it will provide you with backup, version control, online collaboration, forked versions, and many other features</p>
+
+          <h4><a href="http://nocategories.net/ephemera/writing/writing-submission-tools/">Tracking Work with a Database</a></h4>
+          <p>One of the most important business skills a writer needs is the ability to manage the submission process. To facilitate the process, there are many different <a href="http://nocategories.net/ephemera/writing/writing-submission-tools/">submission tracking software</a> options for writers to choose from, but you can also build your own to suit your needs.</p>
+          
 
 
-        <ul>
-          <li><a href="https://github.com/dylan-k/Palabra/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/dylan-k/Palabra/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/dylan-k/Palabra">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="about-this-project" class="anchor" href="#about-this-project"><span class="octicon octicon-link"></span></a>About this Project</h1>
+        </div>
+      </div>
 
-<p>This project is intended to provide two things for the 21st Century writer. First, a guide to version tracking, revision, and collaboration for writing. Second, a set of open-source tools for writers, including a writer's database useful for tracking submissions and a set of useful computer scripts for manipulating written texts and collections of written texts.</p>
 
-<p><em>important note</em>: I'm just a writer looking for tools to help other writers do more powerful things with their text. This is my first Github project. I'm new to all of this and <a href="participate.html">this project could use your input, contributions and advice</a>! I've blogged about my thoughts:</p>
+<h2>A Different Approach to Revision and Collaboration</h2>
 
-<ul>
-<li><a href="http://nocategories.net/tag/writing-tools/">http://nocategories.net/tag/writing-tools/</a></li>
-<li><a href="http://nocategories.net/ephemera/writing/writing-submission-tools/">http://nocategories.net/ephemera/writing/writing-submission-tools/</a></li>
-</ul><h2>
-<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+<p>This project includes <strong>Git for Writers</strong> which introduces the free and open source distributed content versioning system Git specifically for digital writers. Although Git is originally a tool for software development, it can be used to track history and open up the writing process for any digital formats that are plain text, including XHTML/HTML, XML, CSS, JavaScript, and even templating systems in PHP (e.g., WordPress or Drupal).</p>
 
-<p>Significant portions of the text on this site have been adapted from "<a href="https://github.com/gewgaws/git-for-writers">Git for Writers</a>" which was originally created by <a href="https://github.com/gewgaws">Gewgaws Lab</a> at the Illinois Institute of Technology. The original framework for this website was provided by the <a href="https://github.com/edrex/reusable-jekyll-site">Reusable Jekyll Site Framework</a>. This site is hosted by <a href="">Github</a>. Its content is managed with <a href="http://jekyllrb.com/">Jekyll</a> and edited with <a href="http://www.sublimetext.com/">Sublime Text</a> (for offline edits) and <a href="http://www.sublimetext.com/">Prose</a> (for online edits).</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/dylan-k">dylan-k</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<p>But Git is more than just another tool, however. It suggests an entirely different model of revision and version tracking than track-changes features in word processors. Git and related services, such as GitHub, also offer a model of collaboration that is much more expansive and scalable than wikis.</p>
+
+<p>Git for Writers is structured to support writers working alone, perhaps on different computers (e.g., a laptop and a desktop or wherever), as well as multiple writers working together. For each writing situation, **Git for Writers** offers a set of concepts, practical hands-on use of Git and related services, and three sample scenarios for how Git can change the way you write.</p>
+
+<div id="home" class="row">
+  <div class="col-sm-9">
+    <div class="list-group posts">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ post.title }}<small class="pull-right">{{ post.date | date_to_string }}</small></h4>
+      {% if post.description %}
+        <p class="list-group-item-text">{{ post.description }}</p>
+      {% endif %}
+      </a>
+    {% endfor %}
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-546433-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
-</html>
+  </div>
+  <div class="col-sm-3">
+    <div class="list-group posts">
+    {% for post in site.pages %}{% if post.url != page.url and post.title != null %}
+      <a href="{{ post.url }}" title="{{ post.description }}" class="list-group-item">
+        {{ post.title }}
+      </a>
+    {% endif %}{% endfor %}
+    </div>
+  </div>
+</div>

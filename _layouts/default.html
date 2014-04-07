@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Loading Bootstrap -->
+        <link href="/css/bootstrap3.css" rel="stylesheet">
+        <link href="/css/bootstrap-glyphicons.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/site.css">
+
+    </head>
+    <body>
+ <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/dylan-k/Palabra/issues">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">Palabra</h3>
+      </div>
+
+ <div class="jumbotron">
+        <h1 class="title"><a href="/" title="{{ site.name }}">{{ page.title }}  <!-- Edit current page -->
+            </a></h1>
+        <p class="lead">{{ page.description }}</p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p> -->
+      </div>
+
+        <div class="container site">
+          <div class="page-header">
+            <div class="pull-right">
+            {% if page.path and site.github.repo and site.github.branch %}
+              <div class="post-edit">
+                <a class="glyphicon glyphicon-edit pull-right" href="http://prose.io/#{{ site.github.repo }}/edit/{{ site.github.branch }}/{{ page.path }}"></a>
+              </div> 
+            {% endif %}
+            {% if page.date %}
+              <div class="page-date pull-right">{{ page.date | date_to_string }}</div>
+            {% endif %}
+            </div>
+            
+            </div>
+          <div class="content">
+            {{ content }}
+          </div>
+          {{ if site.signature }}<i class="pull-right">{{ site.signature }}</i>{{ endif }}
+        </div> <!-- /container -->
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+---
+layout: post
+title: 'Git for Writers: Creating a New Project'
+---
+
+# Palabra: Tips and Tools for 21st Century Writers
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+
+## Creating a New Project
+
+### Initialize the Project
+
+Explain what creating a new project does.
+
+    git init
+
+Explain response from git.
+
+    Initialized empty Git repository in /my_project/.git/
+
+-   [Home](index.htm)
+-   [Resources](resources.htm)
+-   [About](/about/)
+
+

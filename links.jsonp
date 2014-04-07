@@ -1,0 +1,11 @@
+---
+---
+callback(
+[{% for post in site.posts reversed | sort: title %} { "text": "{{post.title | replace:'"','\"'}}"
+  , "href": "{{post.url}}"
+  }
+,{% endfor %}{% for page in site.pages | sort: title %} { "text": "{{page.title | replace:'"','\"'}}"
+  , "href": "{{page.url}}"
+  }{% unless forloop.last %}
+,{% endunless%}{% endfor %}
+])

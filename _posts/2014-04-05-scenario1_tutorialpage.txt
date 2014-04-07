@@ -1,0 +1,154 @@
+---
+layout: post
+title: 'Git for Writers: Scenario 1'
+---
+
+# Palabra: Tips and Tools for 21st Century Writers
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+
+## Scenario 1: Developing a course syllabus
+
+### Scenario description
+
+You are the new instructor of an undergraduate technical writing course
+to be offered in an upcoming semester. Over the next six weeks, you want
+to develop the course syllabus, which will be uploaded to the course Web
+site as an HTML document. The syllabus sections will be added
+iteratively and include:
+
+-   Course overview, objectives
+-   Readings/assignments calendar
+-   Grading, project requirements
+-   University policies
+
+#### Week one
+
+### Create new document & syllabus outline
+
+![figure 1](scenario1_figure1.png)
+
+Creating an HTML document for the syllabus
+
+1.  You've already completed [Git Setup]().
+2.  You [Create a New Project]() in the *projects* folder of the home
+    directory.
+3.  You create and save a new HTML file COM104\_syllabus.htm in the
+    *projects* folder.
+4.  You copy a CSS file you had used for another course and save it in
+    the *projects* folder as syllabi.css.
+5.  You work for 30 minutes on the outline and appearance of the
+    COM104\_syllabus.htm document until it looks like **Figure 1**.
+
+Saving to a repository
+
+1.  Since you now have two files to be saved to a repository, you
+    [Initialize a Repository]() for *com104* and [Stage a Commit]() for
+    them.
+2.  Next, you [Make a Commit]() to save your project's working copy with
+    in the *com104* repository.
+
+#### Week two
+
+### Add course calendar outline & grading scale
+
+![figure 2](scenario1_figure2.png)
+
+1.  Updating existing documents
+    1.  You add a calendar table under the Course Calendar section and a
+        grading scale table under the Grading & Project Requirements
+        section of COM104\_syllabus.htm. The syllabus now looks like
+        **Figure 2**.
+    2.  You [Make a Commit]() to match your project's working copy with
+        the *com104* repository copy.
+
+2.  Branching sideways to preserve current version
+    1.  To preserve the current document as a form for other syllabi in
+        the future, you decide to "branch sideways," or [Initialize a
+        Repository]() called *courses* for the files and [Stage a
+        Commit]() for them.
+    2.  You then [Make a Commit]() to match the working copy to the new
+        *courses* repository.
+
+#### Week three
+
+### Flesh out calendar & add course objectives
+
+![figure 3](scenario1_figure3.png)
+
+1.  Updating existing documents
+    1.  You add some of the assigned readings and in-class exercises to
+        the calendar table and finish the course objectives. The
+        syllabus now looks like **Figure 3**.
+    2.  You [Make a Commit]() to match your project's working copy of
+        COM104\_syllabus.htm to the *com104* repository copy.
+
+2.  Reviewing document history: Before moving on to other work, you
+    [Track Changes]() to review all of the changes you made to the
+    document today.
+
+#### Week four
+
+### Update university policies & make consistent with course objectives
+
+![figure 4](scenario1_figure4.png)
+
+1.  Updating existing documents
+    1.  The University has just released their updated academic
+        policies. You copy, paste, and format the policies in the
+        syllabus document.
+    2.  You change the course objectives to make them consistent with
+        the University policies' grading and participation criteria.
+    3.  You [Make a Commit]() to match your project's working copy of
+        COM104\_syllabus.htm to the *com104* repository copy.
+
+2.  Adding select update to other branch
+    1.  You also want to add the updated university policies to the
+        syllabus document in the *courses* branch, so you [Switch
+        Branches]().
+    2.  You then use [Cherry-Picking]() to commit only the university
+        policies update to the syllabus.htm document in the *courses*
+        branch.
+
+#### Week five
+
+### Finish calendar & project requirements
+
+![figure 5](scenario1_figure5.png)
+
+1.  Updating existing documents
+    1.  You finish adding the assignments and readings to the course
+        calendar table and add requirement descriptions for each major
+        project assignment.
+    2.  You [Make a Commit]() to match your project's working copy of
+        COM104\_syllabus.htm to the *com104* repository copy.
+
+2.  Rolling back last week's changes to course objectives
+    1.  You realize that course objectives should be more consistent
+        with the course calendar and not the university policies, so you
+        want to restore the previous version of the text.
+    2.  You use a [New Commit to Revert]() the unwanted changes to
+        course objectives.
+
+#### Week six
+
+### Finish course description & make final edits
+
+1.  Updating existing documents
+    1.  You make some final edits to the text of the syllabus document.
+    2.  You then experiment with format by making several changes to the
+        syllabus.css document.
+
+2.  Accepting only some of the changes
+    1.  You decide to only accept the textual changes, so you use [Git
+        Checkout]() to restore the *project* repository's version of
+        syllabus.css and restore COM104\_syllabus.htm to the revised
+        version.
+
+-   [Home](index.htm)
+-   [Resources](resources.htm)
+-   [About](/about/)
+
+

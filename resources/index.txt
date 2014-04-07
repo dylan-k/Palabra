@@ -1,0 +1,124 @@
+---
+layout: "default"
+title: 'Git Resources and References for Writers'
+---
+
+## Git Resources &amp;  References
+
+Below is a list of links that should prove helpful for writers who want to understand how to use Git. Please note that this list is somewhat out-of-date. It contains some broken links and some omissions. It should be revised. If you know of anything that should (or should not) be listed here, please get in touch.
+
+
+### Comprehensive Git Guides 
+
+[Git User's Manual](http://www.kernel.org/pub/software/scm/git/docs/user-manual.html)
+
+The official online Git manual. Comprehensive.
+
+[Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/)
+
+A to-the-point, but in-depth, guide. Not as comprehensive as the Git User's Manual, but more practical. Assumes the user already has Git installed. Starts with basics &amp;  progressively covers advanced concepts, but is perhaps more suited for users with some Git experience. Translated into Chinese, Spanish &amp;  Portuguese. PDF available for download.
+
+[The Git Community Book](http://book.git-scm.com/)
+
+A community-built comprehensive guide online or in PDF form. Broken down into Basic, Intermediate &amp;  Advanced sections. Improvements are ongoing via GitHub.
+
+[Pro Git](http://progit.org/book/)
+
+The online version of the the Pro(fessional) Git Book by Scott Chacon, Git expert who currently works on GitHub.com, the official Git homepage and the Git Community Book. Offers some background on version control and Git and also contains a nice section on Distributed Git for collaborative workflow processes. Blog for additional tips and updates. Source code is publicly available via GitHub.
+
+[Asimilatorul: Git Resources](http://asimilatorul.com/index.php/2009/08/28/git-resources/)
+
+An extraordinary compilation of links from a variety of resources organized by subject and documentation type.
+
+## Git Tutorials 
+
+[git ready](http://www.gitready.com/)
+
+Beginner, intermediate, and advanced Git practices and tutorials; also has a blog-like collection of tips, although those have not been updated for awhile.
+
+
+[Understanding Git Conceptually](http://www.eecs.harvard.edu/~cduan/technical/git/)
+
+A tutorial for Git that discusses the concepts behind the commands.
+
+[Git Tutorial : Starting with git using just 10 commands](http://blog.xkoder.com/2008/08/13/git-tutorial-starting-with-git-using-just-10-commands/)
+
+Basic introduction to Git. Aimed at Linux users &amp; individual developers
+
+[Git Tutorial Part II – Sharpen your Git-Fu with 10 more commands.](http://blog.xkoder.com/2009/06/06/git-tutorial-part-ii-sharpen-you-git-fu-with-10-more-commands/)
+
+A follow-up to the previously listed tutorial, covering more advanced commands.
+
+[Git for the Lazy](http://www.spheredev.org/wiki/Git_for_the_lazy)
+
+Basic tutorial for the "lazy." Plus, a few extras for the not so lazy.
+
+[Git The Basics Tutorial](http://excess.org/article/2008/07/ogre-git-tutorial/)
+
+A video walk-through for those who prefer to watch and learn.
+
+[An Illustrated Guide to Git on Windows](http://nathanj.github.com/gitguide/)
+
+Quick basic guide using GUI tools. Primarily for Windows users.
+
+## Git Command References 
+
+[Git User's Manual: Appendix A. Git Quick Reference](http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#git-quick-start)
+
+A summary of the most used commands, presented without explanation
+
+[Cheat Git](http://cheat.errtheblog.com/s/git)
+
+An extensive list of commands and their functions
+
+[Everyday Git with 20 Commands or So](http://www.kernel.org/pub/software/scm/git/docs/everyday.html)
+
+Everyday commands split up by users: Everyone; Individual Developer (Standalone); Individual Developer (Participant); Integrator; and Repository Administrator.
+
+[Zack Rusin's Git Cheat Sheet](http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html)
+
+A really nice visual, printable reference sheet. Updates accepted
+via GitHub.
+
+## Resources on Content Versioning Generally 
+
+[A Visual Guide to Version Control](http://betterexplained.com/articles/a-visual-guide-to-version-control/)
+
+An easy-to-understand explanation of version control. Uses visual flowchart examples.
+
+[Source Control HOWTO](http://www.ericsink.com/scm/source_control.html)
+
+A comprehensive look at version or source control.
+
+## Cygwin Tutorials 
+
+[An Introduction to Cygwin](http://www.physionet.org/physiotools/cygwin/)
+
+Covers Cygwin downloads, installation, &amp;  basic usage.
+
+[A tutorial about Cygwin, a Linux-like environment for Windows.](http://www.mobilefish.com/developer/cygwin/cygwin.html)
+
+Another Cygwin tutorial. Includes examples &amp;  more details about downloads.
+
+## Version Control 
+
+[Flashbake: Free version-control for writers using git](http://boingboing.net/2009/02/13/flashbake-free-versi.html) 
+
+[Flashbake Automates Version Control for (Nerdy) Writers (Linux &amp; OSX only)](http://lifehacker.com/5232049/flashbake-automates-version-control-for-nerdy-writers)
+
+[Version Control Blog](http://www.versioncontrolblog.com/)
+
+Blog discussing version control generally.
+
+[msysgit - Git on Windows](http://code.google.com/p/msysgit/)
+
+## SSH 
+[OpenSSH for Windows](http://sshwindows.sourceforge.net/)
+
+Sourceforge site for downloading SSH
+
+[Geek to Live: Set up a personal, home SSH server](http://lifehacker.com/software/home-server/geek-to-live--set-up-a-personal-home-ssh-server-205090.php)
+
+Tutorial on setting up SSH on your home computer
+
+

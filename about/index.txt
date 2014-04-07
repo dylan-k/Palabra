@@ -1,0 +1,26 @@
+---
+layout: default
+title: "About this Project"
+description: "Palabra is a project intended to a guide for writers, to use version tracking, revision control, repository storage and collaboration software."
+---
+
+# About this Project
+
+This project is intended to provide two things for the 21st Century writer. First, a guide to version tracking, revision, and collaboration for writing. Second, a set of open-source tools for writers, including a writer's database useful for tracking submissions and a set of useful computer scripts for manipulating written texts and collections of written texts.
+
+*important note*: I'm just a writer looking for tools to help other writers do more powerful things with their text. This is my first Github project. I'm new to all of this and <a href="participate.html">this project could use your input, contributions and advice</a>! I've blogged about my thoughts:
+
+- <a href="http://nocategories.net/tag/writing-tools/">http://nocategories.net/tag/writing-tools/</a>
+- <a href="http://nocategories.net/ephemera/writing/writing-submission-tools/">http://nocategories.net/ephemera/writing/writing-submission-tools/</a>
+
+## Credits
+
+Significant portions of the text on this site have been adapted from "<a href="https://github.com/gewgaws/git-for-writers">Git for Writers</a>" which was originally created by <a href="https://github.com/gewgaws">Gewgaws Lab</a> at the Illinois Institute of Technology. The original framework for this website was provided by the <a href="https://github.com/edrex/reusable-jekyll-site">Reusable Jekyll Site Framework</a>. This site is hosted by <a href="">Github</a>. Its content is managed with <a href="http://jekyllrb.com/">Jekyll</a> and edited with <a href="http://www.sublimetext.com/">Sublime Text</a> (for offline edits) and <a href="http://www.sublimetext.com/">Prose</a> (for online edits).
+
+## About Git for Writers
+
+-   [Home](/)
+-   [Resources](/resources)
+-   [About](/about)
+
+

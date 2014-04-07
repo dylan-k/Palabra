@@ -1,0 +1,344 @@
+---
+layout: post
+title: 'COM104: Introduction to Technical Communication Syllabus'
+---
+
+# COM104 Course Syllabus {style="text-align:center"}
+
+
+
+## COM 104: Introduction to Technical Communication {style="text-align:center"}
+
+## Fall 2010, TuTh 1:30-3:10 p.m. {style="text-align:center"}
+
+## Siegel Hall, Rm 001 {style="text-align:center"}
+
+### Course overview
+
+This course explores the---
+
+There are no required textbooks for this course. All readings listed on
+the course calendar can be found on course reserve under *Smith
+(COM104)*. All other announcements and resources can be found on the
+[course website]()
+
+Contact Instructor Jane Smith by e-mail or in person:
+
+-   jsmith@iit.edu
+-   Office: Siegel Hall, Rm 327
+-   Office hours: TuTh 10-11:30 a.m. or by appointment
+
+### Objectives
+
+After completing this course, students will be able to:
+
+-   Understand key technical communication genres and the stylistic and
+    content-related considerations of each
+-   Conduct audience analyses for various document genres
+-   Write and edit technical documents of professional quality
+-   Work collaboratively to write and edit business reports and manage
+    collaborative projects
+
+### Course calendar
+
+Date
+
+Readings for next class
+
+Assignments and exercises
+
+Sept. 7
+
+Tues.
+
+Konrath, K. (2003). "Writing in the workplace."
+
+Course overview
+
+Sept. 9
+
+Thur.
+
+Schroeder, K. (2005). "Document structure and organization."
+
+Genre exercise
+
+Sept. 14
+
+Tues.
+
+Gutbrod, N. (2006). "Style and word choice for business writing."
+
+E-mail exercise
+
+Sept. 16
+
+Thur.
+
+Stern, J.M. (2001). "Strategies for writing reports and technical
+documentation."
+
+Read your choice of white paper from epa.gov for discussion
+
+Sept. 21
+
+Tues.
+
+Kirsch, A.J. (2007). "Procedural knowledge and information age."
+
+Introduction to Project 1
+
+Sept. 23
+
+Thur.
+
+Hultman, J. (2009). "Procedural documentation in gaming communities."
+
+Lab: Group analysis of user-generated content
+
+Sept. 28
+
+Tues.
+
+Find user-generated gaming procedure and bring to class
+
+Instructions for the Web exercise
+
+Sept. 30
+
+Thur.
+
+Jahn, A. (2003). "An interview-based approach to peer editing."
+
+Workshop Project 1 in class
+
+Oct. 5
+
+Tues.
+
+**Project 1 Due**
+
+Oct. 7
+
+Thur.
+
+NO CLASS: FALL BREAK
+
+Oct. 12
+
+Tues.
+
+Kuhopt, S. (2010). "Principles and methods of audience analysis."
+
+Introduction to Audience Analysis assignment
+
+Oct. 14
+
+Thur.
+
+Oct. 19
+
+Tues.
+
+Oct. 21
+
+Thur.
+
+Oct. 26
+
+Tues.
+
+Oct. 28
+
+Thur.
+
+Nov. 2
+
+Tues.
+
+Nov. 4
+
+Thur.
+
+**Project 2 Due**
+
+Nov. 9
+
+Tues.
+
+Nov. 11
+
+Thur.
+
+Nov. 16
+
+Tues.
+
+Nov. 18
+
+Thur.
+
+Nov. 23
+
+Tues.
+
+Morissy, M. (2006). "Emerging skills in technical communication."
+
+Speaker: Joyce Rasmussen
+
+Nov. 25
+
+Thur.
+
+NO CLASS: Happy Thanksgiving!
+
+Nov. 30
+
+Tues.
+
+Haber, P. (2009). "Communicating across cultures: Considerations---"
+
+Lab/discussion reviewing international communication
+
+Dec. 2
+
+Thur.
+
+Mirel, B. (1998). "Applied Constructivism for User Documentation."
+
+Documentation exercise
+
+Dec. 7
+
+Tues.
+
+Nielsen, J. (2000). "Ten good deeds in Web design."
+
+Usability exercise
+
+Dec. 9
+
+Thur.
+
+Reviw editing and assessment techniques
+
+Workshop papers in class
+
+Dec. 14
+
+Tues.
+
+**Paper Due: Siegel Hall, Rm 001, 1:30-3:10 p.m.**
+
+### Grading & project requirements
+
+Coursework
+
+Items
+
+Grading
+
+Projects
+
+Project 1
+
+15%
+
+Project 2
+
+20%
+
+Papers
+
+Audience Analysis
+
+25%
+
+White Paper
+
+25%
+
+Participation
+
+In-class discussion
+
+5%
+
+Labs and group work
+
+10%
+
+-   **Project 1:** Write a 400-word procedural writing deliverable that
+    instructs the audience on how to accomplish a given task.
+    Deliverables will be judged on how effectively they make use of
+    illustrations and how thoroghly they address audience needs given
+    stated assumptions regarding knowledge and skill-level.
+-   **Project 2:** Select a published article and edit/rewrite it for an
+    online magazine. Deliverables will be judged on how well the address
+    stated audience needs, the constraints of the online medium, and the
+    style of the website.
+-   **Audience Analysis:** In 1,000 words, analyze the manner and
+    success with which the author(s) of an article tailor the writing to
+    the intended audience. Papers will be judged by how well they make
+    an argument and thoroughly address content, organization, layout and
+    visuals.
+-   **White Paper:** A 800-1,000 word white paper on submitting
+    walkthroughs/gaming tips to a wiki or community website. Papers will
+    be judged on mechanics, style, formatting, and how well they address
+    the audience needs per the audience analysis.
+
+### University policies
+
+#### Grading Criteria
+
+A - Student has turned in all required components of a project, the work
+is exceptional in quality, and reflects the student's dedication to
+adjusting the project to his or her own interests.
+
+B - Student has turned in all required components of a project and
+submitted work that is acceptable as graduate level.
+
+C - Student has turned in all required components of a project, but the
+work is below graduate level.
+
+E - Student has not turned in all required components of a project.
+
+#### Attendance and Participation
+
+Your attendance and active participation are required both for your own
+success in the class, and for the success of the class as a whole.
+However, if you absolutely must miss, you must contact the instructor
+ahead of time via email.
+
+#### Academic Honesty
+
+As with any course at IIT, you are expected to uphold the Code of
+Academic Honesty in the [Undergraduate Student Handbook](). All work for
+this course should be your own original effort, including print and
+digital page design and computer code. Summarizations and quotations of
+text, as well as any use of open source code libraries and images not of
+your own making, should be clearly cited as legally and ethically
+warranted and rhetorically appropriate.
+
+If you are at all uncertain as to whether you are submitting work that
+in whole or in part may violate the Code of Academic Honesty, please
+contact me immediately and before the work is due. The consequences of
+academic dishonesty are severe. Any student who violates the Code of
+Academic Honesty will be subject to expulsion from this course with a
+failing grade, and I will report the student to the Chair of the
+Department of Humanities and the Associate Dean of Graduate Academic
+Affairs, who may take additional disciplinary action.
+
+#### Special Needs Statement
+
+Students who have any difficulty (either permanent or temporary) that
+might affect their ability to perform in class should contact me
+privately, either in person or via email, at the start of the semester.
+Methods, materials, or deadlines will be adapted as required to ensure
+equitable participation.
+
+-   [Home](index.htm)
+-   [Resources](resources.htm)
+-   [About](/about/)
+
+

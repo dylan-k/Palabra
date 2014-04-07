@@ -1,0 +1,68 @@
+---
+layout: post
+title: 'Git for Writers: Creating a New Project'
+---
+
+# Palabra: Tips and Tools for 21st Century Writers
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+
+## Staging a Commit
+
+Explain what staging a commit does.
+
+### Check Status
+
+Instruct user to change some files.\
+ Explain how to check status (to see what files have changed).
+
+    git status
+
+Explain response from Git.
+
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Untracked files:
+    #   (use "git add <file>---" to include in what will be committed)
+    #
+    #   filename.html
+
+### Stage Files
+
+Explain how to add single file.
+
+    git add filename.html
+
+Explain how to add multiple files.
+
+    git add filename.html filename2.html
+
+Explain how to add all files.
+
+    git add .
+
+### Check Status Again
+
+    git status
+
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Changes to be committed:
+    #   (use "git rm --cached <file>---" to unstage)
+    #
+    #   new file:   filename.html
+    #   new file:   filename2.html
+
+Explain response from Git.
+
+-   [Home](index.htm)
+-   [Resources](resources.htm)
+-   [About](/about/)
+
+

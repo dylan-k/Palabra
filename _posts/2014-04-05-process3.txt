@@ -1,0 +1,19 @@
+---
+layout: post
+title: Git Process for Publishers
+---
+
+# [Git Process for Publishers](http://gewga.ws/git-for-writers/)
+
+A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
+
+
+
+-   [Start](process.htm)
+-   [Edit](process2.htm)
+-   [Produce](process3.htm)
+
+\
+ \
+ ![timeline\_3](media/img/timeline_3.png)
+
