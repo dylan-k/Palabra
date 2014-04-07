@@ -8,11 +8,11 @@ markdown_ext:  txt
 permalink: /:title.html
 github:
   # enables "edit" link
-  repo: 'dylan-k/git-for-writers'
+  repo: 'dylan-k/Palabra'
   branch: gh-pages
 prose:
-  siteurl: 'http://prose.io/#dylan-k/git-for-writers/edit/gh-pages'
-  relativeLinks: 'https://github.com/dylan-k/git-for-writers/blob/gh-pages/links.jsonp'
+  siteurl: 'http://prose.io/#dylan-k/Palabra/edit/gh-pages'
+  relativeLinks: 'https://github.com/dylan-k/Palabra/blob/gh-pages/links.jsonp'
   # uncomment to limit editing to the _posts directory
   #rooturl: '_posts'
   media: 'media'
