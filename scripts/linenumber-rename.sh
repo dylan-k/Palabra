@@ -1,3 +1,5 @@
+#!/bin/sh
+# rename every file in the directory, using the first line to name the file
 for file in *
 do
    # Avoid renaming diretories!
