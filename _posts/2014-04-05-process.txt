@@ -5,17 +5,6 @@ title: Git Process for Publishers
 
 # Git Process for Publishers
 
-A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
-
-
-
--   [Start](process.htm)
--   [Edit](process2.htm)
--   [Produce](process3.htm)
-
-\
- \
-
 In this scenario, an exercise is presented that will help pull together
 the concepts discussed previously and allow for hands-on practice. This
 project will be most effective if a team of four is formed. For the
@@ -27,9 +16,7 @@ Although there is strong support for non-linear development within Git
 straightforward publishing process with a managing editor controlling
 the various stages of editorial development.
 
-![timeline\_1](media/img/timeline_1.png)
-
-#### Legend for Chart
+![timeline\_1](media/timeline_1.png)
 
 **Step 1.** The scenario involves a linear publishing process whereby a
 team of four individuals are working independently to create an XHTML
@@ -83,21 +70,7 @@ Writers will either add a new file or stage an existing file and then
 commit (“git add” versus “git commit” commands). Refer to earlier
 documentation for instructions on how to Stage a file for a Commit.
 
-# [Git Process for Publishers](http://gewga.ws/git-for-writers/)
-
-A guide for writers, to use version tracking, revision control, repository storage and collaboration software.
-
-
-
--   [Start](process.htm)
--   [Edit](process2.htm)
--   [Produce](process3.htm)
-
-\
- \
- ![timeline\_2](media/img/timeline_2.png)
-
-#### Legend for Chart
+ ![timeline\_2](media/timeline_2.png)
 
 **Step 4.** The managing editor will also need to look out for Pull
 requests from each of the writers after they have Pushed changes to the
@@ -145,8 +118,6 @@ chapter along with the chapters others have submitted. Writers will
 continually need to Push their content and then make Pull requests of
 the managing editor.
 
-#### Legend for Chart
-
 **Step 7** Work that is viewed as complete can be merged from the work
 branch onto the master.
 
@@ -186,14 +157,4 @@ A 3-chapter electronic document, fully formatted and reviewed by
 multiple parties, is now available for distribution on the web.
 
 Everything was completed online in a virtual paperless setting.
-
--   [Home](index.htm)
--   [Resources](resources.htm)
--   [Process](process.htm)
--   [About](/about/)
-
-
-
-
-
 
