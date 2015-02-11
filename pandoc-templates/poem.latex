@@ -1,0 +1,384 @@
+% ----------------------------------------------------------------------------------
+%
+%  Poetry Template for Pandoc
+%  Given a markdown file, this will create a PDF
+%  formatted according to "standard manuscript format"
+%  format description: http://www.shunn.net/format/poem.html
+%  example markdown document: https://gist.github.com/dylan-k/3d5225d175d53457917c
+%  usage
+%  look through the "variables" below and update as needed
+%  place a copy of this file in your pandoc templates directory
+%  or place it in the same directory as the file you'd like to convert (story.md)
+%  then CD into the directory with the file you'd like to convert
+%  then use a command like:
+%  pandoc story.md --latex-engine=xelatex --template=story.latex --from=markdown_github+yaml_metadata_block --output=manuscript.pdf
+%
+% -----------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------------
+% PREAMBLE
+%------------------------------------------------------------------------------------
+
+%!TEX TS-program = xelatex
+\documentclass[12pt]{scrartcl}
+
+
+% DOCUMENT CLASS--------------------------------------------------------------------
+
+  % The first line is a pseudo-comment, to use XeTeX
+  % in general, LaTeX 'comments' begin with % and end with linebreak.
+  % Next we have a simple document class declaration
+  % Pandoc's default latex.template file is more complex:
+
+  % \documentclass$if(fontsize)$[$fontsize$]$endif${scrartcl}
+
+  % with this you would have invented a 'variable', fontsize,
+  % and could write things like
+
+  % `markdown2pdf my.txt --xetex --variable=fontsize:12pt -o my.pdf` or
+  % `pandoc -r markdown -w html my.txt -s --xetex --variable=fontsize:24pt -o my.tex`.
+
+  % If we specified --variable-fontsize:12, then template substitution
+  % would yield a LaTeX document beginning
+  % \documentclass[12pt]{scrarcl}
+  % which is just what we said anyway.
+  % But we could also specify a different fontsize.
+
+  % see "VARIABLES" below.
+
+  % I use the special 'komascript' article class "scrartcl"
+  % the standard minimal LaTeX 'article' class declaration would be something like:
+  % \documentclass[12pt]{article}
+  % There's also a 'Memoir' class,
+  % \documentclass[11pt,article,oneside]{memoir}
+  % which might be worth a look.
+
+  % Enough about the document class.
+
+% VARIABLES-------------------------------------------------------------------------
+  % either the YAML header of the markup file
+  % or the pandoc command can specify values for 'author', 'title', etc.
+  % here's some setup for those things
+  % see also: http://stackoverflow.com/questions/2336007/setting-up-author-or-address-string-variables-in-latex
+
+  \def\title{$title$}
+  \def\author{$author$}
+  % ideally, build surname from author but for now...
+  \def\surname{LastName}
+  % LaTeX is not good with wordcount, so have that in your YAML too
+  \def\wordcount{$wordcount$}
+  \def\address{Address Goes Here\\City, ST 12345\\you@example.com}
+
+% PACKAGES--------------------------------------------------------------------------
+  % The behaviour of LaTeX can be altered by loading "packages" using the
+  % \usepackage command. Each one gives us a particular feature to make
+  % life easier.
+  % ----------------------------------------------------------------------
+
+  \usepackage{fontspec,xltxtra,xunicode,ifthen,fancyhdr,amsmath,alltt}
+  % fontspec means we can specify pretty much any font (see "Fonts" below).
+  % Because we are using XeTeX material,
+  % this template needs to be called with the `--xetex` flag.
+  % the "ifthen" package is loaded to help make conditional content
+  % fancyhdr enables fancy headers and footers
+  % amsmath imports the extensive `amsmath` collection of symbols
+
+  % Language--------------------------------------------------------------------------
+  % The `babel` package, among other things, lets you determine what
+  % language you are using in a given stretch of text, so that typesetting
+  % will go well. Here we specify that mostly, we are speaking English:
+  \usepackage[english]{babel}
+
+% GEOMETRY, MARGINS, ETC-_----------------------------------------------------------
+  % the `geometry` package makes for convenient adjusting of margins, etc.
+  \usepackage[letterpaper,includeheadfoot,margin=1in,footskip=.5in]{geometry}
+  % standard manuscript format prefers 1 inch margins
+
+% PARAGRAPH FORMAT------------------------------------------------------------------
+  % for a poem, a "paragraph" becomes a "stanza"
+  % no need to indent the first lines of a stanza
+  \setlength{\parindent}{0em}
+  % hanging indents are used for lines that are longer than the width of the page
+  % see "hanging indents" section below
+
+  %  put 12pt spacing between paragraphs
+  % example of alternate options:
+  %\setlength{\parskip}{6pt plus 2pt minus 1pt}
+  \setlength{\parskip}{12pt}
+
+  % and try not to have a page break in the middle of a stanza
+  % http://tex.stackexchange.com/questions/21983/how-to-avoid-page-breaks-inside-paragraphs/21985#21985
+  \widowpenalties 1 10000
+  \raggedbottom
+
+% LINE SPACING----------------------------------------------------------------------
+  % for more info: http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
+  \usepackage{setspace}
+  \singlespacing
+  %\onehalfspacing
+  %\doublespacing
+  %\setstretch{2}
+  %\linespread{1.8}
+
+% FONTS-----------------------------------------------------------------------------
+  % Here I set my main font.
+  % I prefer Courier Prime but there are other options
+  % http://www.candlerblog.com/2012/09/11/which-courier/
+  \setmainfont{Courier Prime}
+
+  % For this template, just set everything to use the same font
+  \setromanfont[Mapping=tex-text]{Courier Prime}
+  \setsansfont[Mapping=tex-text]{Courier Prime}
+  \setmonofont[Mapping=tex-text]{Courier Prime}
+
+% HEADINGS--------------------------------------------------------------------------
+  % It doesn't appear as though standard manuscript format specifies for differently
+  % formatted heading levels. It seems they're all bold, 12pt. on their own line.
+  % to acomplish this, the sectsty package is useful
+  % sectsty manual: http://cs.brown.edu/about/system/managed/latex/doc/sectsty.pdf
+  % headings info: http://tex.stackexchange.com/questions/103286/how-to-change-section-subsection-font-size#comment225271_103286
+  % formatting info: http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/TextFonts.html
+  \usepackage{sectsty}
+  \renewcommand*\sectfont{\bfseries\upshape\fontsize{12}{12}\selectfont}
+  % an alternate version of the line above is...
+  % \allsectionsfont{\bfseries\upshape\fontsize{12}{12}\selectfont}
+
+
+% ----------------------------------------------------------------------------------
+% Everything that follows is copied from the pandoc default template:
+% I will interpolate a few comments, the comments that are in
+% the default template will be marked % --
+% ----------------------------------------------------------------------------------
+
+
+% PAGE FORMAT-----------------------------------------------------------------------
+  \pagestyle{fancy}
+
+  % The default `plain` pagestyle just numbers the pages,
+  % whereas
+  % \pagestyle{empty}
+  % would give you no numbering.
+  % After one-million man-years of macro-composition,
+  % there are also fancy pagestyles with much wilder options
+  % for headers and footers, of course.
+
+% FOOTNOTES-------------------------------------------------------------------------
+  % if you have code in your footnotes, the million macro march
+  % kind of bumps into itself.
+  % Pandoc, having just rendered your text into LaTeX,
+  % knows whether the 'variable' `verbatim-in-note` is True, and
+  % If it is, it asks for a  LaTeX package that solves the dilemma:
+  $if(verbatim-in-note)$
+  \usepackage{fancyvrb}
+  $endif$
+
+% LISTS-----------------------------------------------------------------------------
+  % note sure what 'fancy enums' are; something to do with lists,
+  % as the further comment suggests:
+  $if(fancy-enums)$
+  % -- Redefine labelwidth for lists; otherwise, the enumerate package will cause
+  % -- markers to extend beyond the left margin.
+  \makeatletter\AtBeginDocument{%
+    \renewcommand{\@listi}
+      {\setlength{\labelwidth}{4em}}
+  }\makeatother
+  \usepackage{enumerate}
+  $endif$
+
+% TABLE FORMATTING------------------------------------------------------------------
+  % What if you make a table? -- Pandoc knows, of course, and
+  % then declares that its  variable `table` is True and
+  % imports a table package suitable to its pleasantly simple tables.
+  % Needless to say infinitely   complicated tables are possible in
+  % LaTeX with suitable packages. We are spared the temptation:
+
+  $if(tables)$
+  \usepackage{array}
+
+  % Continuing on the topic of tables ... (we havent reached `endif`).
+  % The commented out line below is in the default pandoc  latex.template.
+  % Some unpleasantness with table formatting must be corrected.
+
+  % -- This is needed because raggedright in table elements redefines \\:
+  \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+  \let\PBS=\PreserveBackslash
+
+  $endif$
+
+% SUBSCRIPTS------------------------------------------------------------------------
+  % Pandoc remembers whether you used subscripts, assigning True to
+  % its `subscript` variable
+  % It then needs to adopt a default with an incantation like this:
+  $if(subscript)$
+  \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
+  $endif$
+
+% LINKS-----------------------------------------------------------------------------
+  % markdown inclines us to use links, since our texts can be made into html.
+  % Why not have clickable blue links even in
+  % learned, scientific, religious, juridical, poetical and other suchlike texts?
+  % Never mind that they have been proven to destroy the nervous system!
+
+  % First, what about the fact that links like http://example.com are
+  % technically code and thus must not be broken across lines?
+  % [breaklinks=true] to the rescue!
+
+  % Nowadays LaTeX can handle all of this with another half million macros:
+
+  \usepackage[breaklinks=true]{hyperref}
+  \hypersetup{colorlinks,%
+  citecolor=blue,%
+  filecolor=blue,%
+  linkcolor=blue,%
+  urlcolor=blue}
+  $if(url)$
+  \usepackage{url}
+  $endif$
+
+% IMAGES----------------------------------------------------------------------------
+  % In ye olde LaTeX one could only import a limited range of image
+  % types. Today we have more options.
+
+  $if(graphics)$
+  \usepackage{graphicx}
+  % -- We will generate all images so they have a width \maxwidth. This means
+  % -- that they will get their normal width if they fit onto the page, but
+  % -- are scaled down if they would overflow the margins.
+  \makeatletter
+  \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+  \else\Gin@nat@width\fi}
+  \makeatother
+  \let\Oldincludegraphics\includegraphics
+  \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
+  $endif$
+
+% SECTION NUMBERING-----------------------------------------------------------------
+  % Here again is a variable you can specify on the commandline
+  % `markdown2pdf my.txt --number-sections --xetex --template=/wherever/this/is -o my.pdf`
+  $if(numbersections)$
+  $else$
+  \setcounter{secnumdepth}{0}
+  $endif$
+
+% FOOTNOTES (PART 2)----------------------------------------------------------------
+  % Wait, didn't we already discuss the crisis of code in footnotes?
+  % Evidently the order of unfolding of macros required that
+  % we import a package to deal with them earlier
+  % and issue a command it defines now. (Or maybe that's not the reason;
+  % very often the order does matter as the insane system of macro expansion
+  % must take place by stages.)
+  $if(verbatim-in-note)$
+  \VerbatimFootnotes % -- allows verbatim text in footnotes
+  $endif$
+
+% HEADER INCLUDES-------------------------------------------------------------------
+  % You can include stuff for the header from a file specified on the command line;
+  % I've never done this, but that stuff will go here:
+  $for(header-includes)$
+  $header-includes$
+  $endfor$
+
+
+
+%------------------------------------------------------------------------------------
+% DOCUMENT
+%------------------------------------------------------------------------------------
+
+  % After filling in all these blanks above, or erasing them
+  % where they are not needed, Pandoc has finished writing the
+  % famous LaTeX *preamble* for your document.
+  % Now comes the all-important command \begin{document}
+  % which as you can see, will be paired with an \end{document} at the end.
+  % Pandoc knows whether you have a title, and has already
+  % specified what it is; if so, it demands that the title be rendered.
+  % Pandoc knows whether you want a table of contents, you
+  % specify this on the command line.
+  % Then, after fiddling with alignments, there comes the real
+  % business: pandoc slaps its rendering of your text in the place of
+  % the variable `body`
+  % It then concludes the document it has been writing.
+
+\begin{document}
+
+
+% Header----------------------------------------------------------------------------
+  % ON THE FIRST PAGE, put name, address, telephone number, and e-mail address
+  % in the upper left corner. In the upper right corner of the first page, place an
+  % approximate word count.
+
+  % ON SUBSEQUENT PAGES, put a header in the upper right corner.
+  % This header should have your real surname, one or two important words from the
+  % title, and the current page number.
+
+  % The fancyhdr package was set up above to enable nice headers and
+  % footers. The package uses the command \lhead, \chead, \rhead for
+  % headers and \lfoot, \cfoot and \rfoot for footers (left, centred and
+  % right, respectively).
+
+  \renewcommand{\headrulewidth}{0pt} % and the line
+  \addtolength{\voffset}{0pt}
+
+  \lhead{%
+    \ifthenelse{\equal{\thepage}{1}}
+      {\author\\\address} % Page one => put the special header, then some space26
+      {} % subsequent pages: blank left header
+  }
+
+  \rhead{%
+    \ifthenelse{\equal{\thepage}{1}}
+      {\wordcount  words \vspace{24 pt}}                      % Page one => put the special header
+      {\surname / \title / \thepage}% subsequent pages: print default number
+  }
+
+  % make the footer blank
+  \fancyfoot{}
+
+
+% Title, Author---------------------------------------------------------------------
+\vspace*{0.3\textheight} % space of one-third page-height before the title
+% this space also equals 204pt or 17 single-spaced lines
+% note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
+
+% If you specified title authors and date at the start of
+% your pandoc-markdown file, pandoc knows the 'values' of the
+% variables: title authors date and fills them in.
+\begin{singlespace}\begin{center}
+$if(title)$
+  \MakeUppercase{$title$}
+  \vspace{12pt}
+$endif$
+
+$if(author)$
+  by $author$
+$endif$
+\end{center}\end{singlespace}
+
+
+
+
+
+
+
+
+
+
+\vspace{36pt}
+
+% hanging indents are used for lines that are longer than the width of the page
+% see also: http://www.wkiri.com/today/?p=76
+\newenvironment{hanginglines}[1][.5in]
+  {%
+   \renewcommand\\{\par\hangindent#1}%
+   \parindent0pt %
+   \hangindent#1 %
+  }
+  {\par}
+\begin{hanginglines}
+
+% Body------------------------------------------------------------------------------
+
+$body$
+
+\end{hanginglines}
+\end{document}
