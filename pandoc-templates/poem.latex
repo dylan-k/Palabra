@@ -11,7 +11,7 @@
 %  or place it in the same directory as the file you'd like to convert (story.md)
 %  then CD into the directory with the file you'd like to convert
 %  then use a command like:
-%  pandoc story.md --latex-engine=xelatex --template=story.latex --from=markdown_github+yaml_metadata_block --output=manuscript.pdf
+%  pandoc poem.md --latex-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block --output=poem.pdf
 %
 % -----------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@
 %------------------------------------------------------------------------------------
 
 %!TEX TS-program = xelatex
-\documentclass[12pt]{scrartcl}
+\documentclass[12pt,oneside]{scrartcl}
 
 
 % DOCUMENT CLASS--------------------------------------------------------------------
@@ -76,41 +76,49 @@
   % life easier.
   % ----------------------------------------------------------------------
 
-  \usepackage{fontspec,xltxtra,xunicode,ifthen,fancyhdr,amsmath,alltt}
+  \usepackage{fontspec,xltxtra,xunicode,ifthen,fancyhdr,amsmath}
   % fontspec means we can specify pretty much any font (see "Fonts" below).
   % Because we are using XeTeX material,
   % this template needs to be called with the `--xetex` flag.
   % the "ifthen" package is loaded to help make conditional content
   % fancyhdr enables fancy headers and footers
   % amsmath imports the extensive `amsmath` collection of symbols
-
-  % Language--------------------------------------------------------------------------
-  % The `babel` package, among other things, lets you determine what
-  % language you are using in a given stretch of text, so that typesetting
-  % will go well. Here we specify that mostly, we are speaking English:
+  % The `babel` package, among other things, lets you determine language 
   \usepackage[english]{babel}
+
+% PAGE FORMAT-----------------------------------------------------------------------
+  \pagestyle{fancy}
+  % The default `plain` pagestyle just numbers the pages,
+  % whereas
+  % \pagestyle{empty}
+  % would give you no numbering.
 
 % GEOMETRY, MARGINS, ETC-_----------------------------------------------------------
   % the `geometry` package makes for convenient adjusting of margins, etc.
-  \usepackage[letterpaper,includeheadfoot,margin=1in,footskip=.5in]{geometry}
+  \usepackage[letterpaper,includeheadfoot,margin=1in,textheight=600pt,footskip=1in]{geometry}
   % standard manuscript format prefers 1 inch margins
+  % with 25 lines of 12pt type, double spaced = 100pt textheight.
 
 % PARAGRAPH FORMAT------------------------------------------------------------------
   % for a poem, a "paragraph" becomes a "stanza"
   % no need to indent the first lines of a stanza
-  \setlength{\parindent}{0em}
+  \setlength{\parindent}{0pt}
+
   % hanging indents are used for lines that are longer than the width of the page
   % see "hanging indents" section below
 
-  %  put 12pt spacing between paragraphs
+  % put 12pt spacing between each paragraph/stanza
   % example of alternate options:
-  %\setlength{\parskip}{6pt plus 2pt minus 1pt}
+  % \setlength{\parskip}{6pt plus 2pt minus 1pt}
   \setlength{\parskip}{12pt}
 
-  % and try not to have a page break in the middle of a stanza
+  % try not to have a page break in the middle of a stanza
   % http://tex.stackexchange.com/questions/21983/how-to-avoid-page-breaks-inside-paragraphs/21985#21985
-  \widowpenalties 1 10000
+\widowpenalty=10000
+\clubpenalty=10000
+\linepenalty=400
   \raggedbottom
+
 
 % LINE SPACING----------------------------------------------------------------------
   % for more info: http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
@@ -151,17 +159,6 @@
 % the default template will be marked % --
 % ----------------------------------------------------------------------------------
 
-
-% PAGE FORMAT-----------------------------------------------------------------------
-  \pagestyle{fancy}
-
-  % The default `plain` pagestyle just numbers the pages,
-  % whereas
-  % \pagestyle{empty}
-  % would give you no numbering.
-  % After one-million man-years of macro-composition,
-  % there are also fancy pagestyles with much wilder options
-  % for headers and footers, of course.
 
 % FOOTNOTES-------------------------------------------------------------------------
   % if you have code in your footnotes, the million macro march
@@ -279,30 +276,7 @@
   $header-includes$
   $endfor$
 
-
-
-%------------------------------------------------------------------------------------
-% DOCUMENT
-%------------------------------------------------------------------------------------
-
-  % After filling in all these blanks above, or erasing them
-  % where they are not needed, Pandoc has finished writing the
-  % famous LaTeX *preamble* for your document.
-  % Now comes the all-important command \begin{document}
-  % which as you can see, will be paired with an \end{document} at the end.
-  % Pandoc knows whether you have a title, and has already
-  % specified what it is; if so, it demands that the title be rendered.
-  % Pandoc knows whether you want a table of contents, you
-  % specify this on the command line.
-  % Then, after fiddling with alignments, there comes the real
-  % business: pandoc slaps its rendering of your text in the place of
-  % the variable `body`
-  % It then concludes the document it has been writing.
-
-\begin{document}
-
-
-% Header----------------------------------------------------------------------------
+% HEADER----------------------------------------------------------------------------
   % ON THE FIRST PAGE, put name, address, telephone number, and e-mail address
   % in the upper left corner. In the upper right corner of the first page, place an
   % approximate word count.
@@ -327,58 +301,72 @@
 
   \rhead{%
     \ifthenelse{\equal{\thepage}{1}}
-      {\wordcount  words \vspace{24 pt}}                      % Page one => put the special header
-      {\surname / \title / \thepage}% subsequent pages: print default number
+      {\wordcount~words\vspace{36 pt}}                      % Page one => put the special header
+      {\surname~/~\title~/~\thepage}% subsequent pages: print default number
   }
 
-  % make the footer blank
+  % FOOTER----------------------------------------------------------------------------
+  % Standard Manuscript Format does not call for a footer, so it's blank here
   \fancyfoot{}
+  \cfoot{}
+
+%------------------------------------------------------------------------------------
+% DOCUMENT
+%------------------------------------------------------------------------------------
+
+  % After filling in all these blanks above, or erasing them
+  % where they are not needed, Pandoc has finished writing the
+  % famous LaTeX *preamble* for your document.
+  % Now comes the all-important command \begin{document}
+  % which as you can see, will be paired with an \end{document} at the end.
+  % Pandoc knows whether you have a title, and has already
+  % specified what it is; if so, it demands that the title be rendered.
+  % Pandoc knows whether you want a table of contents, you
+  % specify this on the command line.
+  % Then, after fiddling with alignments, there comes the real
+  % business: pandoc slaps its rendering of your text in the place of
+  % the variable `body`
+  % It then concludes the document it has been writing.
+
+\begin{document}
 
 
-% Title, Author---------------------------------------------------------------------
 \vspace*{0.3\textheight} % space of one-third page-height before the title
-% this space also equals 204pt or 17 single-spaced lines
-% note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
-
-% If you specified title authors and date at the start of
-% your pandoc-markdown file, pandoc knows the 'values' of the
-% variables: title authors date and fills them in.
-\begin{singlespace}\begin{center}
-$if(title)$
-  \MakeUppercase{$title$}
-  \vspace{12pt}
-$endif$
-
-$if(author)$
-  by $author$
-$endif$
-\end{center}\end{singlespace}
+  % this space also equals 204pt or 17 single-spaced lines
+  % note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
 
 
+% TITLE, AUTHOR---------------------------------------------------------------------
+  % If you specified title authors and date at the start of
+  % your pandoc-markdown file, pandoc knows the 'values' of the
+  % variables: title authors date and fills them in.
+  \begin{singlespace}
 
+  \begin{center}
+    $if(title)$\MakeUppercase{$title$}$endif$
+  \end{center}
+  \end{singlespace}
 
-
-
-
-
-
-
-\vspace{36pt}
-
-% hanging indents are used for lines that are longer than the width of the page
-% see also: http://www.wkiri.com/today/?p=76
-\newenvironment{hanginglines}[1][.5in]
-  {%
-   \renewcommand\\{\par\hangindent#1}%
-   \parindent0pt %
-   \hangindent#1 %
-  }
-  {\par}
-\begin{hanginglines}
-
-% Body------------------------------------------------------------------------------
-
+\vspace{24pt} % space after the title
+  
+% HANGING INDENTS -------------------------------------------------------------------
+  % hanging indents are used for lines that are longer than the width of the page
+  % see also: http://www.wkiri.com/today/?p=76
+  % \newenvironment{hanginglines}[1][.5in]
+  %   {%
+  %    \renewcommand\\{\par\hangindent#1}%
+  %    \parindent0pt %
+  %    \hangindent#1 %
+  %   }
+  %   {\par}
+  % \begin{hanginglines}
+\begin{verse}
+% BODY------------------------------------------------------------------------------
 $body$
+\end{verse}
+% \end{hanginglines}
 
-\end{hanginglines}
+
+
+
 \end{document}
