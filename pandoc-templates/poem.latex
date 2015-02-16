@@ -113,11 +113,7 @@
   \setlength{\parskip}{12pt}
 
   % try not to have a page break in the middle of a stanza
-  % http://tex.stackexchange.com/questions/21983/how-to-avoid-page-breaks-inside-paragraphs/21985#21985
-\widowpenalty=10000
-\clubpenalty=10000
-\linepenalty=400
-  \raggedbottom
+\makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
 
 
 % LINE SPACING----------------------------------------------------------------------
