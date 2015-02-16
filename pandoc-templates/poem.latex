@@ -99,20 +99,32 @@
   % standard manuscript format prefers 1 inch margins
   % with 25 lines of 12pt type, double spaced = 100pt textheight.
 
+% FONTS-----------------------------------------------------------------------------
+  % Here I set my main font.
+  % I prefer Courier Prime but there are other options
+  % http://www.candlerblog.com/2012/09/11/which-courier/
+  \setmainfont{Courier Prime}
+
+  % For this template, just set everything to use the same font
+  \setromanfont[Mapping=tex-text]{Courier Prime}
+  \setsansfont[Mapping=tex-text]{Courier Prime}
+  \setmonofont[Mapping=tex-text]{Courier Prime}
+
 % PARAGRAPH FORMAT------------------------------------------------------------------
   % for a poem, a "paragraph" becomes a "stanza"
   % no need to indent the first lines of a stanza
-  \setlength{\parindent}{0pt}
-
-  % hanging indents are used for lines that are longer than the width of the page
-  % see "hanging indents" section below
+  \usepackage{indentfirst}
+  \setlength{\parindent}{0in}
+  \raggedbottom
 
   % put 12pt spacing between each paragraph/stanza
-  % example of alternate options:
-  % \setlength{\parskip}{6pt plus 2pt minus 1pt}
   \setlength{\parskip}{12pt}
 
+    % hanging indents are used for lines that are longer than the width of the page
+  % see "hanging indents" section below
+
   % try not to have a page break in the middle of a stanza
+  % http://tex.stackexchange.com/questions/228373/avoid-page-break-within-poem-stanza/228408?noredirect=1#comment538887_228408
 \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
 
 
@@ -125,28 +137,21 @@
   %\setstretch{2}
   %\linespread{1.8}
 
-% FONTS-----------------------------------------------------------------------------
-  % Here I set my main font.
-  % I prefer Courier Prime but there are other options
-  % http://www.candlerblog.com/2012/09/11/which-courier/
-  \setmainfont{Courier Prime}
 
-  % For this template, just set everything to use the same font
-  \setromanfont[Mapping=tex-text]{Courier Prime}
-  \setsansfont[Mapping=tex-text]{Courier Prime}
-  \setmonofont[Mapping=tex-text]{Courier Prime}
 
 % HEADINGS--------------------------------------------------------------------------
   % It doesn't appear as though standard manuscript format specifies for differently
   % formatted heading levels. It seems they're all bold, 12pt. on their own line.
+
   % to acomplish this, the sectsty package is useful
   % sectsty manual: http://cs.brown.edu/about/system/managed/latex/doc/sectsty.pdf
   % headings info: http://tex.stackexchange.com/questions/103286/how-to-change-section-subsection-font-size#comment225271_103286
   % formatting info: http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/TextFonts.html
   \usepackage{sectsty}
-  \renewcommand*\sectfont{\bfseries\upshape\fontsize{12}{12}\selectfont}
+  \renewcommand*\sectfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
+
   % an alternate version of the line above is...
-  % \allsectionsfont{\bfseries\upshape\fontsize{12}{12}\selectfont}
+  %\allsectionsfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
 
 
 % ----------------------------------------------------------------------------------
