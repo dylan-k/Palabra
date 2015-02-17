@@ -1,16 +1,14 @@
 % ----------------------------------------------------------------------------------
-%
-%  Poetry Template for Pandoc
-%  Given a markdown file, this will create a PDF
-%  formatted according to "standard manuscript format"
+%  POETRY TEMPLATE FOR PANDOC
+%  Converts a plaintext poem in Markdown format to PDF in Standard Manuscript Format
 %  format description: http://www.shunn.net/format/poem.html
 %  example markdown document: https://gist.github.com/dylan-k/3d5225d175d53457917c
 %  usage
-%  look through the "variables" below and update as needed
-%  place a copy of this file in your pandoc templates directory
+%  1. look through the "variables" below and update as needed
+%  2. place a copy of this file in your pandoc templates directory
 %  or place it in the same directory as the file you'd like to convert (story.md)
-%  then CD into the directory with the file you'd like to convert
-%  then use a command like:
+%  3. then CD into the directory with the file you'd like to convert
+%  4.  use a command like:
 %  pandoc poem.md --latex-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block --output=poem.pdf
 %
 % -----------------------------------------------------------------------------------
@@ -22,7 +20,6 @@
 
 %!TEX TS-program = xelatex
 \documentclass[12pt,oneside]{scrartcl}
-
 
 % DOCUMENT CLASS--------------------------------------------------------------------
 
@@ -120,13 +117,12 @@
   % put 12pt spacing between each paragraph/stanza
   \setlength{\parskip}{12pt}
 
-    % hanging indents are used for lines that are longer than the width of the page
+  % hanging indents are used for lines that are longer than the width of the page
   % see "hanging indents" section below
 
   % try not to have a page break in the middle of a stanza
-  % http://tex.stackexchange.com/questions/228373/avoid-page-break-within-poem-stanza/228408?noredirect=1#comment538887_228408
-\makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
-
+  % http://tex.stackexchange.com/a/228408/46020
+  \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
 
 % LINE SPACING----------------------------------------------------------------------
   % for more info: http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
@@ -137,21 +133,17 @@
   %\setstretch{2}
   %\linespread{1.8}
 
-
-
 % HEADINGS--------------------------------------------------------------------------
-  % It doesn't appear as though standard manuscript format specifies for differently
-  % formatted heading levels. It seems they're all bold, 12pt. on their own line.
 
-  % to acomplish this, the sectsty package is useful
-  % sectsty manual: http://cs.brown.edu/about/system/managed/latex/doc/sectsty.pdf
-  % headings info: http://tex.stackexchange.com/questions/103286/how-to-change-section-subsection-font-size#comment225271_103286
-  % formatting info: http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/TextFonts.html
-  \usepackage{sectsty}
-  \renewcommand*\sectfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
-
-  % an alternate version of the line above is...
-  %\allsectionsfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
+  % In Standard Manuscript format, all headings are bold, 12pt. on their own line.
+    % to acomplish this, the sectsty package is useful
+    % sectsty manual: http://cs.brown.edu/about/system/managed/latex/doc/sectsty.pdf
+    % headings info: http://tex.stackexchange.com/questions/103286/how-to-change-section-subsection-font-size#comment225271_103286
+    % formatting info: http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/TextFonts.html
+    \usepackage{sectsty}
+    \renewcommand*\sectfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
+    % an alternate version of the line above is...
+    %\allsectionsfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
 
 
 % ----------------------------------------------------------------------------------
@@ -331,11 +323,9 @@
 
 \begin{document}
 
-
 \vspace*{0.3\textheight} % space of one-third page-height before the title
   % this space also equals 204pt or 17 single-spaced lines
   % note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
-
 
 % TITLE, AUTHOR---------------------------------------------------------------------
   % If you specified title authors and date at the start of
@@ -349,25 +339,10 @@
   \end{singlespace}
 
 \vspace{24pt} % space after the title
-  
-% HANGING INDENTS -------------------------------------------------------------------
-  % hanging indents are used for lines that are longer than the width of the page
-  % see also: http://www.wkiri.com/today/?p=76
-  % \newenvironment{hanginglines}[1][.5in]
-  %   {%
-  %    \renewcommand\\{\par\hangindent#1}%
-  %    \parindent0pt %
-  %    \hangindent#1 %
-  %   }
-  %   {\par}
-  % \begin{hanginglines}
+
 \begin{verse}
-% BODY------------------------------------------------------------------------------
-$body$
+  % BODY------------------------------------------------------------------------------
+  $body$
 \end{verse}
-% \end{hanginglines}
-
-
-
 
 \end{document}
