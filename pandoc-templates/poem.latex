@@ -62,9 +62,9 @@
   \def\author{$author$}
   % ideally, build surname from author but for now...
   \def\surname{LastName}
-  % LaTeX is not good with wordcount, so have that in your YAML too
-  \def\wordcount{$wordcount$}
-  \def\address{Address Goes Here\\City, ST 12345\\you@example.com}
+  % dunno how to do linecount, so have that in your YAML too
+  \def\linecount{$linecount$}
+  \def\address{Address Goes Here\\City, ST 12345\\(555) 555-5555\\you@example.com}
 
 % PACKAGES--------------------------------------------------------------------------
   % The behaviour of LaTeX can be altered by loading "packages" using the
@@ -116,6 +116,10 @@
   % put 12pt spacing between each paragraph-stanza 
     \setlength{\parskip}{12pt}
 
+  % widows and orphans
+    \widowpenalty=300
+    \clubpenalty=300
+
   % try not to have a page break in the middle of a stanza
     % http://tex.stackexchange.com/a/228408/46020
     \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
@@ -129,7 +133,7 @@
   %\setstretch{2}
   %\linespread{1.8}
 
-% HEADINGS--------------------------------------------------------------------------
+% SECTIONING------------------------------------------------------------------------
 
   % In Standard Manuscript format, all headings are bold, 12pt. on their own line.
     % to acomplish this, the sectsty package is useful
@@ -141,7 +145,7 @@
     % an alternate version of the line above is...
     %\allsectionsfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
 
-    % flush-left headings within the verse environment
+    % FLUSH-LEFT HEADINGS WITHIN THE VERSE ENVIRONMENT
     % http://tex.stackexchange.com/a/228547/46020
     % see also \setlength{\leftmargini}{0em} after the \begin{document}
         \let\oldsection\section
@@ -155,6 +159,14 @@
         \let\oldsubsubsection\subsubsection
         \renewcommand\subsubsection[1]{%
         \end{verse}\oldsubsubsection{#1}\begin{verse}}
+
+    % SECTION NUMBERING
+      % Here again is a variable you can specify on the commandline
+      % `markdown2pdf my.txt --number-sections --xetex --template=/wherever/this/is -o my.pdf`
+      $if(numbersections)$
+      $else$
+      \setcounter{secnumdepth}{0}
+      $endif$
 
 % ----------------------------------------------------------------------------------
 % Everything that follows is copied from the pandoc default template:
@@ -253,14 +265,6 @@
   \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
   $endif$
 
-% SECTION NUMBERING-----------------------------------------------------------------
-  % Here again is a variable you can specify on the commandline
-  % `markdown2pdf my.txt --number-sections --xetex --template=/wherever/this/is -o my.pdf`
-  $if(numbersections)$
-  $else$
-  \setcounter{secnumdepth}{0}
-  $endif$
-
 % FOOTNOTES (PART 2)----------------------------------------------------------------
   % Wait, didn't we already discuss the crisis of code in footnotes?
   % Evidently the order of unfolding of macros required that
@@ -293,19 +297,20 @@
   % headers and \lfoot, \cfoot and \rfoot for footers (left, centred and
   % right, respectively).
 
+  % header has 5 lines *12pt is 60pt tall
+
   \renewcommand{\headrulewidth}{0pt} % and the line
   \addtolength{\voffset}{0pt}
 
   \lhead{%
     \ifthenelse{\equal{\thepage}{1}}
-      {\author\\\address} % Page one => put the special header, then some space26
-      {} % subsequent pages: blank left header
+      {\author\\\address} % Page one => 5 lines or 60pt
+      {\author\\\title, page \thepage\vspace{36 pt}} % subsequent pages
   }
-
   \rhead{%
     \ifthenelse{\equal{\thepage}{1}}
-      {\wordcount~words\vspace{36 pt}}                      % Page one => put the special header
-      {\surname~/~\title~/~\thepage}% subsequent pages: print default number
+      {\linecount~lines\vspace{48 pt}}% Page one => put the special header
+      {\vspace{60 pt}}% subsequent pages: empty space
   }
 
   % FOOTER----------------------------------------------------------------------------
@@ -333,7 +338,7 @@
 
 \begin{document}
 \setlength{\leftmargini}{0em} % set the left margin to zero
-\vspace*{0.3\textheight} % space of one-third page-height before the title
+\vspace*{180pt} % space of one-third the 600pt-page-height before the title
   % this space also equals 204pt or 17 single-spaced lines
   % note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
 
@@ -344,11 +349,11 @@
   \begin{singlespace}
 
   \begin{center}
-    $if(title)$\MakeUppercase{$title$}$endif$
+    $if(title)$\MakeUppercase{$title$}\vspace{24pt}$endif$
   \end{center}
   \end{singlespace}
 
-\vspace{24pt} % space after the title
+
 
 \begin{verse}
 

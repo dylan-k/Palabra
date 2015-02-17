@@ -1,7 +1,7 @@
 ---  
 title: Poem Title  
-author: Firstname Lastname  
-wordcount: 4,707
+author: Firstname Surname  
+linecount: 60
 date: 2015-01-24
 ---
 
