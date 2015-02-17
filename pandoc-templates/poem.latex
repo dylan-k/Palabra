@@ -18,7 +18,6 @@
 % PREAMBLE
 %------------------------------------------------------------------------------------
 
-%!TEX TS-program = xelatex
 \documentclass[12pt,oneside]{scrartcl}
 
 % DOCUMENT CLASS--------------------------------------------------------------------
@@ -73,7 +72,7 @@
   % life easier.
   % ----------------------------------------------------------------------
 
-  \usepackage{fontspec,xltxtra,xunicode,ifthen,fancyhdr,amsmath}
+  \usepackage{fontspec,ifthen,fancyhdr}
   % fontspec means we can specify pretty much any font (see "Fonts" below).
   % Because we are using XeTeX material,
   % this template needs to be called with the `--xetex` flag.
@@ -109,20 +108,17 @@
 
 % PARAGRAPH FORMAT------------------------------------------------------------------
   % for a poem, a "paragraph" becomes a "stanza"
-  % no need to indent the first lines of a stanza
-  \usepackage{indentfirst}
-  \setlength{\parindent}{0in}
-  \raggedbottom
+    % no need to indent the first lines of a stanza
+    \usepackage{indentfirst}
+    \setlength{\parindent}{0in}
+    \raggedbottom
 
-  % put 12pt spacing between each paragraph/stanza
-  \setlength{\parskip}{12pt}
-
-  % hanging indents are used for lines that are longer than the width of the page
-  % see "hanging indents" section below
+  % put 12pt spacing between each paragraph-stanza 
+    \setlength{\parskip}{12pt}
 
   % try not to have a page break in the middle of a stanza
-  % http://tex.stackexchange.com/a/228408/46020
-  \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
+    % http://tex.stackexchange.com/a/228408/46020
+    \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
 
 % LINE SPACING----------------------------------------------------------------------
   % for more info: http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
@@ -141,10 +137,24 @@
     % headings info: http://tex.stackexchange.com/questions/103286/how-to-change-section-subsection-font-size#comment225271_103286
     % formatting info: http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/TextFonts.html
     \usepackage{sectsty}
-    \renewcommand*\sectfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
+    \renewcommand*\sectfont{\setlength{\leftmargini}{0em}\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
     % an alternate version of the line above is...
     %\allsectionsfont{\raggedright\bfseries\upshape\fontsize{12}{12}\selectfont}
 
+    % flush-left headings within the verse environment
+    % http://tex.stackexchange.com/a/228547/46020
+    % see also \setlength{\leftmargini}{0em} after the \begin{document}
+        \let\oldsection\section
+        \renewcommand\section[1]{%
+        \end{verse}\oldsection{#1}\begin{verse}}
+
+        \let\oldsubsection\subsection
+        \renewcommand\subsection[1]{%
+        \end{verse}\oldsubsection{#1}\begin{verse}}
+
+        \let\oldsubsubsection\subsubsection
+        \renewcommand\subsubsection[1]{%
+        \end{verse}\oldsubsubsection{#1}\begin{verse}}
 
 % ----------------------------------------------------------------------------------
 % Everything that follows is copied from the pandoc default template:
@@ -322,7 +332,7 @@
   % It then concludes the document it has been writing.
 
 \begin{document}
-
+\setlength{\leftmargini}{0em} % set the left margin to zero
 \vspace*{0.3\textheight} % space of one-third page-height before the title
   % this space also equals 204pt or 17 single-spaced lines
   % note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
@@ -341,6 +351,7 @@
 \vspace{24pt} % space after the title
 
 \begin{verse}
+
   % BODY------------------------------------------------------------------------------
   $body$
 \end{verse}
