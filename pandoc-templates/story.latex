@@ -1,4 +1,4 @@
-% ----------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------
 %
 %  CUSTOM LaTeX TEMPLATE FOR PANDOC
 %  Given a markdown file, this will create a PDF
@@ -13,18 +13,18 @@
 % then use a command like:
 % pandoc story.md --latex-engine=xelatex --template=story.latex --from=markdown_github+yaml_metadata_block --output=story.pdf
 %
-% -----------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------
 
 
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % PREAMBLE
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 
 %!TEX TS-program = xelatex
 \documentclass[12pt]{scrartcl}
 
-% DOCUMENT CLASS--------------------------------------------------------------------
+% DOCUMENT CLASS----------------------------------------------------------------
 
   % The first line is a pseudo-comment, to use XeTeX
   % in general, LaTeX 'comments' begin with % and end with linebreak.
@@ -56,7 +56,7 @@
 
   % Enough about the document class.
 
-% VARIABLES-------------------------------------------------------------------------
+% VARIABLES---------------------------------------------------------------------
   % either the YAML header of the markup file
   % or the pandoc command can specify values for 'author', 'title', etc.
   % here's some setup for those things
@@ -70,7 +70,7 @@
   \def\wordcount{$wordcount$}
   \def\address{Address Goes Here\\City, ST 12345\\you@example.com}
 
-% PACKAGES--------------------------------------------------------------------------
+% PACKAGES----------------------------------------------------------------------
   % The behaviour of LaTeX can be altered by loading "packages" using the
   % \usepackage command. Each one gives us a particular feature to make
   % life easier.
@@ -84,13 +84,13 @@
   % fancyhdr enables fancy headers and footers
   % amsmath imports the extensive `amsmath` collection of symbols
 
-  % Language--------------------------------------------------------------------------
+  % Language----------------------------------------------------------------------
   % The `babel` package, among other things, lets you determine what
   % language you are using in a given stretch of text, so that typesetting
   % will go well. Here we specify that mostly, we are speaking English:
   \usepackage[english]{babel}
 
-% GEOMETRY, MARGINS, PAGE FORMAT----------------------------------------------------
+% GEOMETRY, MARGINS, PAGE FORMAT------------------------------------------------
   % the `geometry` package makes for convenient adjusting of margins, etc.
   \usepackage[letterpaper,includehead,nofoot,margin=1in,marginparwidth=0pt,textheight=600pt]{geometry}
   % standard manuscript format prefers 1 inch margins
@@ -108,7 +108,7 @@
   \widowpenalty=300
   \clubpenalty=300
 
-% FONTS-----------------------------------------------------------------------------
+% FONTS-------------------------------------------------------------------------
   % Here I set my main font.
   % I prefer Courier Prime but there are other options
   % http://www.candlerblog.com/2012/09/11/which-courier/
@@ -133,7 +133,7 @@
       \setmathfont(Digits,Latin,Greek){$mathfont$}
   $endif$
 
-% PARAGRAPH FORMAT------------------------------------------------------------------
+% PARAGRAPH FORMAT--------------------------------------------------------------
   % Standard Manuscript Format has half-inch indented paragraphs...
   \usepackage{indentfirst}
   \setlength{\parindent}{.5in}
@@ -142,7 +142,7 @@
   % but if you want that you can try:
   % \setlength{\parskip}{6pt plus 2pt minus 1pt}
 
-% LINE SPACING----------------------------------------------------------------------
+% LINE SPACING------------------------------------------------------------------
   % LaTex is a mad hatter who thinks "double" spacing equals 1.8!
   % so here's a workaround
   % for more info: http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
@@ -153,7 +153,7 @@
   %\setstretch{2}
   %\linespread{1.8}
 
-% HEADINGS--------------------------------------------------------------------------
+% HEADINGS----------------------------------------------------------------------
   % It doesn't appear as though standard manuscript format specifies for differently
   % formatted heading levels. It seems they're all bold, 12pt. on their own line.
   % to acomplish this, the sectsty package is useful
@@ -165,13 +165,13 @@
   % an alternate version of the line above is...
   % \allsectionsfont{\bfseries\upshape\fontsize{12}{12}\selectfont}
 
-% FOOTNOTES-------------------------------------------------------------------------
+% FOOTNOTES---------------------------------------------------------------------
   % for the unlikely event that a short story would have complex footnotes?
   $if(verbatim-in-note)$
   \usepackage{fancyvrb}
   $endif$
 
-% LISTS-----------------------------------------------------------------------------
+% LISTS-------------------------------------------------------------------------
   % note sure what 'fancy enums' are; something to do with lists,
   % as the further comment suggests:
   $if(fancy-enums)$
@@ -184,7 +184,7 @@
   \usepackage{enumerate}
   $endif$
 
-% TABLE FORMATTING------------------------------------------------------------------
+% TABLE FORMATTING--------------------------------------------------------------
   % What if you make a table? -- Pandoc knows, of course, and
   % then declares that its  variable `table` is True and
   % imports a table package suitable to its pleasantly simple tables.
@@ -204,7 +204,7 @@
 
   $endif$
 
-% SUBSCRIPTS------------------------------------------------------------------------
+% SUBSCRIPTS--------------------------------------------------------------------
   % Pandoc remembers whether you used subscripts, assigning True to
   % its `subscript` variable
   % It then needs to adopt a default with an incantation like this:
@@ -212,7 +212,7 @@
   \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
   $endif$
 
-% LINKS-----------------------------------------------------------------------------
+% LINKS-------------------------------------------------------------------------
   % markdown inclines us to use links, since our texts can be made into html.
   % Why not have clickable blue links even in
   % learned, scientific, religious, juridical, poetical and other suchlike texts?
@@ -234,7 +234,7 @@
   \usepackage{url}
   $endif$
 
-% IMAGES----------------------------------------------------------------------------
+% IMAGES------------------------------------------------------------------------
   % In ye olde LaTeX one could only import a limited range of image
   % types. Today we have more options.
 
@@ -251,7 +251,7 @@
   \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
   $endif$
 
-% SECTION NUMBERING-----------------------------------------------------------------
+% SECTION NUMBERING-------------------------------------------------------------
   % Here again is a variable you can specify on the commandline
   % `markdown2pdf my.txt --number-sections --xetex --template=/wherever/this/is -o my.pdf`
   $if(numbersections)$
@@ -259,7 +259,7 @@
   \setcounter{secnumdepth}{0}
   $endif$
 
-% FOOTNOTES (PART 2)----------------------------------------------------------------
+% FOOTNOTES (PART 2)------------------------------------------------------------
   % Wait, didn't we already discuss the crisis of code in footnotes?
   % Evidently the order of unfolding of macros required that
   % we import a package to deal with them earlier
@@ -270,7 +270,7 @@
   \VerbatimFootnotes % -- allows verbatim text in footnotes
   $endif$
 
-% HEADER AND FOOTER ----------------------------------------------------------------
+% HEADER AND FOOTER ------------------------------------------------------------
   % ON THE FIRST PAGE, put name, address, telephone number, and e-mail address
   % in the upper left corner. In the upper right corner of the first page, place an
   % approximate word count.
@@ -284,7 +284,7 @@
   % headers and \lfoot, \cfoot and \rfoot for footers (left, centred and
   % right, respectively).
 
-  % HEADER--------------------------------------------------------------------------
+  % HEADER----------------------------------------------------------------------
     \renewcommand{\headrulewidth}{0pt} % and the line
     %\addtolength{\voffset}{-.5in}
 
@@ -300,11 +300,11 @@
         {\surname~/~\title~/~\thepage}% subsequent pages: print default number
     }
 
-  % FOOTER--------------------------------------------------------------------------
+  % FOOTER----------------------------------------------------------------------
     % Standard Manuscript Format does not call for a footer, so it's blank here
     \fancyfoot{}
 
-% HEADER INCLUDES-------------------------------------------------------------------
+% HEADER INCLUDES---------------------------------------------------------------
   % You can include stuff for the header from a file specified on the command line;
   % I've never done this, but that stuff will go here:
   $for(header-includes)$
@@ -312,9 +312,9 @@
   $endfor$
 
 
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % DOCUMENT
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
   % After filling in all these blanks above, or erasing them
   % where they are not needed, Pandoc has finished writing the
   % famous LaTeX *preamble* for your document.
@@ -343,7 +343,7 @@
 
 \vspace*{0.3\textheight} % space of one-third page-height before the title
 
-% TITLE, AUTHOR---------------------------------------------------------------------
+% TITLE, AUTHOR-----------------------------------------------------------------
   % this space also equals 204pt or 17 single-spaced lines
   % note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
 
@@ -363,7 +363,7 @@
 
 \vspace{36pt} % space of 3 lines after the title and author
 
-% BODY------------------------------------------------------------------------------
+% BODY----------------------------------------------------------------------------
 
 $body$
 

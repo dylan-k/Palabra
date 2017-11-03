@@ -1,26 +1,29 @@
-% ----------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 %  POETRY TEMPLATE FOR PANDOC
-%  Converts a plaintext poem in Markdown format to PDF in Standard Manuscript Format
+%  Converts a poem in Markdown format to PDF in Standard Manuscript Format
 %  format description: http://www.shunn.net/format/poem.html
-%  example markdown document: https://gist.github.com/dylan-k/3d5225d175d53457917c
-%  usage
+%  example markdown: https://gist.github.com/dylan-k/3d5225d175d53457917c
+% 
+%  USAGE
 %  1. look through the "variables" below and update as needed
 %  2. place a copy of this file in your pandoc templates directory
-%  or place it in the same directory as the file you'd like to convert (story.md)
+%     (by default that directory is ~/.pandoc/templates )
+%     or place this file in the directory with the file to convert 
+%     (e.g. poem.md)
 %  3. then CD into the directory with the file you'd like to convert
 %  4.  use a command like:
-%  pandoc poem.md --latex-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block --output=poem.pdf
+%      pandoc poem.md --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block --output=poem.pdf
 %
-% -----------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 
 
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % PREAMBLE
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \documentclass[12pt,oneside]{scrartcl}
 
-% DOCUMENT CLASS--------------------------------------------------------------------
+% DOCUMENT CLASS----------------------------------------------------------------
 
   % The first line is a pseudo-comment, to use XeTeX
   % in general, LaTeX 'comments' begin with % and end with linebreak.
@@ -52,7 +55,7 @@
 
   % Enough about the document class.
 
-% VARIABLES-------------------------------------------------------------------------
+% VARIABLES-----------------------------------------------------------------------
   % either the YAML header of the markup file
   % or the pandoc command can specify values for 'author', 'title', etc.
   % here's some setup for those things
@@ -66,7 +69,7 @@
   \def\linecount{$linecount$}
   \def\address{Address Goes Here\\City, ST 12345\\(555) 555-5555\\you@example.com}
 
-% PACKAGES--------------------------------------------------------------------------
+% PACKAGES------------------------------------------------------------------------
   % The behaviour of LaTeX can be altered by loading "packages" using the
   % \usepackage command. Each one gives us a particular feature to make
   % life easier.
@@ -168,14 +171,14 @@
       \setcounter{secnumdepth}{0}
       $endif$
 
-% ----------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % Everything that follows is copied from the pandoc default template:
 % I will interpolate a few comments, the comments that are in
 % the default template will be marked % --
-% ----------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 
 
-% FOOTNOTES-------------------------------------------------------------------------
+% FOOTNOTES---------------------------------------------------------------------
   % if you have code in your footnotes, the million macro march
   % kind of bumps into itself.
   % Pandoc, having just rendered your text into LaTeX,
@@ -185,7 +188,7 @@
   \usepackage{fancyvrb}
   $endif$
 
-% LISTS-----------------------------------------------------------------------------
+% LISTS-------------------------------------------------------------------------
   % note sure what 'fancy enums' are; something to do with lists,
   % as the further comment suggests:
   $if(fancy-enums)$
@@ -198,7 +201,7 @@
   \usepackage{enumerate}
   $endif$
 
-% TABLE FORMATTING------------------------------------------------------------------
+% TABLE FORMATTING--------------------------------------------------------------
   % What if you make a table? -- Pandoc knows, of course, and
   % then declares that its  variable `table` is True and
   % imports a table package suitable to its pleasantly simple tables.
@@ -218,7 +221,7 @@
 
   $endif$
 
-% SUBSCRIPTS------------------------------------------------------------------------
+% SUBSCRIPTS--------------------------------------------------------------------
   % Pandoc remembers whether you used subscripts, assigning True to
   % its `subscript` variable
   % It then needs to adopt a default with an incantation like this:
@@ -226,7 +229,7 @@
   \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
   $endif$
 
-% LINKS-----------------------------------------------------------------------------
+% LINKS-------------------------------------------------------------------------
   % markdown inclines us to use links, since our texts can be made into html.
   % Why not have clickable blue links even in
   % learned, scientific, religious, juridical, poetical and other suchlike texts?
@@ -248,7 +251,7 @@
   \usepackage{url}
   $endif$
 
-% IMAGES----------------------------------------------------------------------------
+% IMAGES------------------------------------------------------------------------
   % In ye olde LaTeX one could only import a limited range of image
   % types. Today we have more options.
 
@@ -265,7 +268,7 @@
   \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
   $endif$
 
-% FOOTNOTES (PART 2)----------------------------------------------------------------
+% FOOTNOTES (PART 2)------------------------------------------------------------
   % Wait, didn't we already discuss the crisis of code in footnotes?
   % Evidently the order of unfolding of macros required that
   % we import a package to deal with them earlier
@@ -276,14 +279,14 @@
   \VerbatimFootnotes % -- allows verbatim text in footnotes
   $endif$
 
-% HEADER INCLUDES-------------------------------------------------------------------
+% HEADER INCLUDES---------------------------------------------------------------
   % You can include stuff for the header from a file specified on the command line;
   % I've never done this, but that stuff will go here:
   $for(header-includes)$
   $header-includes$
   $endfor$
 
-% HEADER----------------------------------------------------------------------------
+% HEADER------------------------------------------------------------------------
   % ON THE FIRST PAGE, put name, address, telephone number, and e-mail address
   % in the upper left corner. In the upper right corner of the first page, place an
   % approximate word count.
@@ -313,14 +316,14 @@
       {\vspace{60 pt}}% subsequent pages: empty space
   }
 
-  % FOOTER----------------------------------------------------------------------------
+  % FOOTER----------------------------------------------------------------------
   % Standard Manuscript Format does not call for a footer, so it's blank here
   \fancyfoot{}
   \cfoot{}
 
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % DOCUMENT
-%------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
   % After filling in all these blanks above, or erasing them
   % where they are not needed, Pandoc has finished writing the
@@ -342,7 +345,7 @@
   % this space also equals 204pt or 17 single-spaced lines
   % note: http://texhacks.blogspot.com/2010/12/vspace-is-broken.html
 
-% TITLE, AUTHOR---------------------------------------------------------------------
+% TITLE, AUTHOR----------------------------------------------------------------
   % If you specified title authors and date at the start of
   % your pandoc-markdown file, pandoc knows the 'values' of the
   % variables: title authors date and fills them in.
@@ -357,7 +360,7 @@
 
 \begin{verse}
 
-  % BODY------------------------------------------------------------------------------
+  % BODY------------------------------------------------------------------------
   $body$
 \end{verse}
 
