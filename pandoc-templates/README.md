@@ -9,7 +9,7 @@ Quick and easy formatting for writers. Start with a plain text markdown-formatte
 There are command-line utilities and other apps you'll need to have installed before this kit will be useful.
 
 - [Courier Prime](https://quoteunquoteapps.com/courierprime/) a better, free Courier font.
-- Pandoc for document conversion
+- [Pandoc](https://pandoc.org/) for document conversion
 - [Xelatex](https://www.latex-project.org/get/) for typesetting, and its pacakge:   
   - [sectsty](https://ctan.org/pkg/sectsty?lang=en)
 

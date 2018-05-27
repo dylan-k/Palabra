@@ -4,3 +4,6 @@
 [submodule "bestrew"]
 	path = bestrew
 	url = https://github.com/dylan-k/bestrew
+[submodule "pandoc-ebook-template"]
+	path = pandoc-ebook-template
+	url = https://github.com/evangoer/pandoc-ebook-template.git
