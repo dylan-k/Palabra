@@ -1,0 +1,365 @@
+% -----------------------------------------------------------------------------
+%
+%  CHAPBOOK TEMPLATE FOR PANDOC
+%
+%  Given a markdown file, this will create a PDF document 
+%  formatted as a chapbook. Poems go in. Chapbook comes out.
+%  Supports the 'novel' manuscript format as well as 'short story.'
+%
+%  An example markdown document: 
+%    https://gist.github.com/3d5225d175d53457917c.git
+%
+%  USAGE
+%  - Place a copy of this file in your pandoc templates directory 
+%  - or place it in the directory with the file to convert (eg. chapbook.md) 
+%  - use a command such as:
+%
+%  pandoc poem1.txt poem2.txt poem3.txt --latex-engine=xelatex \ 
+%    --template=chapbook.latex --from=markdown_github+yaml_metadata_block \ 
+%    --output=chapbook.pdf
+% -----------------------------------------------------------------------------
+
+
+
+% -----------------------------------------------------------------------------
+% PREAMBLE
+% -----------------------------------------------------------------------------
+
+%!TEX TS-program = xelatex
+\documentclass[%
+  10pt, %default text size
+  twoside,
+  paper=9in:6in,
+  headinclude=off,
+  footinclude=on,
+  BCOR=0.185in, % correct for binding size
+  DIV=9, % calculate textarea via 9 portions
+  openany % don't force chapters to start on the righthand page
+  ]{scrbook}
+  
+\usepackage{setspace}
+\setstretch{1.2}          % set the leading
+\KOMAoptions{DIV=last}  % adjust layout to accomidate leading
+  
+\pagestyle{plain}
+\KOMAoptions{appendixprefix=false}
+
+% \usepackage[fontsize=09pt,baseline=10.62pt,lines=10]{grid}
+
+
+% DOCUMENT CLASS---------------------------------------------------------------
+  % The first line is a pseudo-comment to use XeTeX. In general, LaTeX
+  % comments begin with % and end with linebreak. Next we have a simple
+  % document class declaration. Pandoc's default latex.template file is more
+  % complex:
+  %   \documentclass$if(fontsize)$[$fontsize$]$endif${scrartcl}
+  %
+  % With this you would have invented a 'variable', fontsize,
+  % and could use commands like:
+  %   markdown2pdf my.txt --xetex --variable=fontsize:12pt -o my.pdf
+  % Or:
+  %   pandoc -r markdown -w html my.txt -s --xetex --variable=fontsize:24pt 
+  %   -o my.tex.
+  %
+  % If we specified --variable-fontsize:12, then template substitution would 
+  % yield a LaTeX document beginning:
+  %   \documentclass[12pt]{scrarcl}
+  %
+  % Which is what we've specified anyway, since standard manuscript format
+  % requires 12pt font. See "VARIABLES" below for items which remain
+  % customisable in this template.
+  %
+  % We use the special 'komascript' book class "scrbook"; the standard 
+  % minimal LaTeX 'article' class declaration would be something like:
+  %   \documentclass[12pt]{book}
+  % Or there's also a 'book' class:
+  %   \documentclass[11pt,article,oneside]{memoir}
+  % Which may be of interest to you.
+
+% VARIABLES--------------------------------------------------------------------
+  % Either the YAML header of the markup file or the pandoc command-line 
+  % interface can specify values for 'author', 'title', etc. Here we provide
+  % them as input to our LaTeX variables, if they exist. Otherwise the LaTeX
+  % variables will remain empty, but still defined so that use of the template
+  % does not cause an error.
+  % See also: 
+  %   http://stackoverflow.com/questions/2336007/
+  
+  % title / author / date
+  $if(title)$
+    \title{$title$}
+  $endif$
+  $if(author)$
+    \author{$for(author)$$author$$sep$ \and $endfor$}
+  $endif$
+  $if(date)$
+    \date{$date$}
+  $else$
+    \date{}
+  $endif$
+
+% PACKAGES---------------------------------------------------------------------
+  % The behavior of LaTeX can change by loading "packages" using the
+  % \usepackage command. Each gives particular features to make life easier.
+
+  \usepackage{
+    fontspec, % specify any font
+    xunicode, % support unicode characters
+    ifthen,   % helps make conditional content 
+    }
+  \usepackage[english]{babel} % sets the language
+
+
+% CUSTOM COMMANDS--------------------------------------------------------------
+  % If bullet point lists are included:
+  
+  \providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% GEOMETRY, MARGINS, PAGE FORMAT-----------------------------------------------
+  % the `geometry` package makes for convenient adjusting of margins, etc.
+  % this book will be the US Trade size, 6x9"
+  % It'll use somewhat large margins, for verse, but these can change:
+  %   size: 6in 9in;        /* US TRADE size */
+  %   margin-top: 1in;      /* one-ninth of the paper HEIGHT   */
+  %   margin-right:1.33in;  /* two-ninths of the paper WIDTH   */
+  %   margin-bottom: 2in;   /* two-ninths of the paper HEIGHT  */
+  %   margin-left: 1.33in;  /* two-ninths of the paper WIDTH   */
+  % You can offset the margin spacing with:
+  %   \setlength{\voffset}{-0.5in} 
+  % To debug formatting info in the output, uncomment the line below and the
+  % associated '\layout' line in the document body:
+  %   \usepackage{layout} 
+
+  % \usepackage[tmargin=1in,rmargin=1.33in,bmargin=1in,lmargin=1.33in,includeheadfoot,footskip=.5in]{geometry}
+  
+
+
+% FONTS------------------------------------------------------------------------
+  % Here we set the main fonts for the manuscript. 
+  % These came from Google Fonts and should be locally installed.
+
+  \setmainfont{Noto Serif}
+  \setromanfont{Noto Serif}
+  \setsansfont{Noto Sans}
+  \setmonofont{Courier Prime}
+  \addtokomafont{pagenumber}{\small\sffamily} % page number font
+
+  % Allow pandoc commands to override default fonts:
+  $if(mainfont)$
+    \setmainfont{$mainfont$}
+  $endif$
+
+  $if(sansfont)$
+    \setsansfont{$sansfont$}
+  $endif$
+
+  $if(monofont)$
+    \setmonofont[Mapping=tex-ansi]{$monofont$}
+  $endif$
+
+  $if(mathfont)$
+    \setmathfont(Digits,Latin,Greek){$mathfont$}
+  $endif$
+  
+% PARAGRAPH FORMAT-------------------------------------------------------------
+  % for verse, a "paragraph" becomes a "stanza"
+    % no need to indent the first lines of a stanza
+    \usepackage{indentfirst}
+    \setlength{\parindent}{0in}
+    \raggedbottom
+    
+  % Later, we'll have hanging indents, so remove indentation
+    \parindent=0em
+
+  % put zero spacing between each paragraph-stanza 
+    \setlength{\parskip}{0pt}
+
+  % control for widows and orphans
+    \usepackage[defaultlines=4,all]{nowidow}
+    % \widowpenalty=300
+    % \clubpenalty=300
+
+  % try not to have a page break in the middle of a stanza
+    % http://tex.stackexchange.com/a/228408/46020
+    \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
+
+% HEADINGS, SECTIONS, AND SECTION BREAKS---------------------------------------
+  % The sectsty package is useful for setting our heading appearance.
+  %   formatting info:
+  %     https://www.sharelatex.com/learn/Sections_and_chapters
+  %     http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/TextFonts.html
+  %     https://tex.stackexchange.com/questions/223508/
+  
+  % remove heading prefixes like "Chapter 01"
+  % also allow chapters to being on either right or left page
+     \KOMAoptions{chapterprefix=false,headings=openany}
+
+  % Set font size, leading, family, weight for headings
+     \addtokomafont{chapter}{\fontsize{16.18}{16.18}\sffamily\mdseries}
+     \addtokomafont{section}{\fontsize{16.18}{16.18}\sffamily\mdseries}
+
+  % set spacing before/after headings (of all types)
+     \renewcommand*{\chapterformat}{}
+     \RedeclareSectionCommands[
+        beforeskip=0pt,
+        afterskip=42.358pt
+      ]{section,subsection,chapter,subsubsection}
+      
+  % Number section headings in pandoc via --number-sections 
+    $if(numbersections)$
+      % Do nothing, this is the default LaTeX behaviour.
+    $else$
+      % Remove numbering from headings
+        % https://tex.stackexchange.com/questions/80113#300055
+    $endif$
+
+  % Use centered '###' line for section breaks,
+    % eg. when you use ---- in Markdown:
+    \renewcommand{\rule}[2]{\#\#\#}
+
+% EMPHASIS---------------------------------------------------------------------
+  % Use underlines for emphasis instead of italics when working with monospace
+  % fonts:
+  % \usepackage{ulem}
+  % \ULforem
+
+% FOOTNOTES--------------------------------------------------------------------
+  % If your manuscript has complex footnotes, 
+  % you can specify the below option to allow verbatim text. 
+  % note that \VerbatimFootnotes doesn't play well with some packages. 
+  $if(verbatim-in-note)$
+    \usepackage{fancyvrb}
+    \VerbatimFootnotes
+  $endif$
+
+% LISTS------------------------------------------------------------------------
+  % List styling options:
+  $if(fancy-enums)$
+
+    % -- Redefine labelwidth for lists; otherwise, the enumerate package will 
+    % -- cause markers to extend beyond the left margin:
+
+    \makeatletter\AtBeginDocument{
+      \renewcommand{\@listi}
+        {\setlength{\labelwidth}{4em}}
+    }\makeatother
+
+    \usepackage{enumerate}
+
+  $endif$
+
+% TABLE FORMATTING-------------------------------------------------------------
+  % If you have specified a Markdown table in your manuscript, pandoc will
+  % declare that its `table` variable is True and we will import a table
+  % package suitable for simple tables:
+
+  $if(tables)$
+
+    \usepackage{array}
+
+    % -- This is because raggedright in table elements redefines \\:
+    \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+    \let\PBS=\PreserveBackslash
+
+  $endif$
+
+% SUBSCRIPTS-------------------------------------------------------------------
+  % pandoc remembers whether you used subscripts, assigning True to its
+  % `subscript` variable. We will adopt a default:
+
+  $if(subscript)$
+    \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
+  $endif$
+
+% LINKS------------------------------------------------------------------------
+  % Markdown allows the use of links since our texts can become HTML.
+  % We need to accomodate them in manuscript format.
+  %
+  % Links such as 'http://example.com' are to considered code  
+  % and thus must not break across lines:
+
+    \usepackage[breaklinks=true]{hyperref}
+    \hypersetup{hidelinks}
+
+% IMAGES-----------------------------------------------------------------------
+  % Import our graphics handling libraries, although these may not be present
+  % in most manuscripts:
+    
+  $if(graphics)$
+  
+    \usepackage{graphicx}
+
+    % -- We will generate all images so they have a width \maxwidth. This means
+    % -- that they will get their normal width if they fit onto the page, but
+    % -- are scaled down if they would overflow the margins.
+    
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
+    
+  $endif$
+
+% TABLE OF CONTENTS------------------------------------------------------------
+  % use dot leaders, serifs, don't bold, exclude title-numbers
+  \KOMAoptions{toc=flat,toc=chapterentrydotfill}
+  \addtokomafont{partentry}{\rmfamily\mdseries}
+  \addtokomafont{partentrypagenumber}{\rmfamily\mdseries}
+  \addtokomafont{chapterentry}{\rmfamily\mdseries}
+  \addtokomafont{chapterentrypagenumber}{\rmfamily\mdseries}
+  \renewcommand{\chaptername}{}
+  \renewcommand{\thechapter}{}
+  \DeclareTOCStyleEntry[beforeskip=0pt]{chapter}{chapter} % TOC Line Spacing
+  \DeclareTOCStyleEntry[beforeskip=0pt]{section}{section}
+  \DeclareTOCStyleEntry[beforeskip=0pt]{default}{subsection} 
+
+% HEADER INCLUDES--------------------------------------------------------------
+  % specify in pandoc via --include-in-header (may have multiple values)
+
+  % $for(header-includes)$
+  %   $header-includes$
+  % $endfor$
+
+
+
+
+%------------------------------------------------------------------------------
+% DOCUMENT
+%------------------------------------------------------------------------------
+
+\begin{document}
+
+% To debug the page layout, uncomment this line:
+%   \layout
+
+% COVER------------------------------------------------------------------------
+  \maketitle
+  
+% FRONTMATTER------------------------------------------------------------------
+  \tableofcontents
+  \cleardoubleoddpage
+  \pagenumbering{arabic}
+
+% PARAGRAPH FORMAT-------------------------------------------------------------
+  % may need adjustment, but has hanging indent for now
+  \raggedright
+  \raggedbottom 
+  \setlength{\parskip}{0em}
+  \setlength\parindent{0em}
+  % hanging indent via https://tex.stackexchange.com/questions/140203
+  \leftskip=2em % hanging indent part 1
+  \parindent=-2em % hanging indent part 2
+
+% -----------------------------------------------------------------------------
+% BODY
+% -----------------------------------------------------------------------------
+% Now, your actual manuscript content forms the body of the document:
+
+$body$
+
+% ENDMATTER--------------------------------------------------------------------
+  % nothing yet...
+
+\end{document}
