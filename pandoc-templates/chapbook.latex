@@ -7,7 +7,7 @@
 %  Supports the 'novel' manuscript format as well as 'short story.'
 %
 %  An example markdown document: 
-%    https://gist.github.com/3d5225d175d53457917c.git
+%    https://gist.github.com/dylan-k/d104a80de5fc3cdacabd7923bee96b3a
 %
 %  USAGE
 %  - Place a copy of this file in your pandoc templates directory 
