@@ -1,0 +1,221 @@
+---
+extends: existence
+message: "'%s' might distract from the point."
+ignorecase: true
+level: warning
+tokens:
+  - "!!!"
+  - Honestly
+  - I am about
+  - I believe
+  - I doubt
+  - I feel
+  - I guess
+  - I may be wrong
+  - I might be wrong
+  - I should
+  - I think
+  - I will try
+  - I'll try
+  - I'm about
+  - I'm just being honest here
+  - I'm just saying
+  - I'm just trying
+  - I'm no expert
+  - I'm not an expert
+  - I'm not sure
+  - I'm trying
+  - If I'm being honest
+  - In my opinion
+  - This might be a stupid question
+  - We think
+  - We're no expert
+  - Yes, but
+  - a bit
+  - a little
+  - a tad
+  - a touch
+  - about
+  - actually
+  - allege
+  - alleged
+  - almost
+  - almost never
+  - always
+  - and all that
+  - and so forth
+  - apologies
+  - apologize
+  - apparent
+  - apparently
+  - appear
+  - appear to be
+  - appeared
+  - appears
+  - approximately
+  - arguably
+  - around
+  - as far as I know
+  - assume
+  - assumed
+  - assumes
+  - assumption
+  - at least
+  - basically
+  - be sure
+  - believe
+  - believed
+  - believes
+  - bother
+  - bunch
+  - can
+  - certain
+  - certainly
+  - clear
+  - clearly
+  - conceivably
+  - consider
+  - considered
+  - considers
+  - consistent with
+  - could
+  - couple
+  - definite
+  - definitely
+  - diagnostic
+  - does that make sense
+  - don't know
+  - doubt
+  - doubtful
+  - effectively
+  - estimate
+  - estimated
+  - estimates
+  - et cetera
+  - evidently
+  - fairly
+  - few
+  - find
+  - finds
+  - forgive
+  - found
+  - frequently
+  - from my point of view
+  - generally
+  - guess
+  - guessed
+  - guesses
+  - hardly
+  - hopefully
+  - if I'm honest
+  - if i'm understanding you correctly
+  - improbable
+  - in all honesty
+  - in general
+  - in my mind
+  - in my opinion
+  - in my understanding
+  - in my view
+  - inconclusive
+  - indicate
+  - just
+  - just about
+  - kind of
+  - largely
+  - like
+  - likely
+  - literally
+  - little
+  - look like
+  - looks like
+  - mainly
+  - many
+  - may
+  - maybe
+  - might
+  - more or less
+  - most
+  - mostly
+  - much
+  - must
+  - my impression
+  - my thinking is
+  - my understanding is
+  - nearly
+  - necessarily
+  - occasionally
+  - often
+  - overall
+  - partially
+  - partly
+  - perhaps
+  - possibility
+  - possible
+  - possibly
+  - practically
+  - presumable
+  - presumably
+  - pretty
+  - probability
+  - probable
+  - probably
+  - quite
+  - quite clearly
+  - rare
+  - rarely
+  - rather
+  - really
+  - really quite
+  - roughly
+  - says
+  - seem
+  - seem(s)?
+  - seemed
+  - seems
+  - seldom
+  - several
+  - should
+  - so far
+  - some
+  - somebody
+  - somehow
+  - someone
+  - something
+  - something or other
+  - sometimes
+  - somewhat
+  - somewhere
+  - sorry
+  - sort of
+  - speculate
+  - speculated
+  - speculates
+  - suggest
+  - suggested
+  - suggestive
+  - suggests
+  - suppose
+  - supposed
+  - supposedly
+  - supposes
+  - surely
+  - tend
+  - their impression
+  - think
+  - thinks
+  - thought
+  - to be honest
+  - to be perfectly honest
+  - to my knowledge
+  - try
+  - trying
+  - understand
+  - understands
+  - understood
+  - unlikely
+  - unsure
+  - usually
+  - very
+  - virtually
+  - will
+  - would
