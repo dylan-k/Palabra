@@ -1,4 +1,4 @@
-% ------------------------------------------------------------------------------
+% =============================================================================
 %  POETRY TEMPLATE FOR PANDOC
 %  Converts a poem in Markdown format to PDF in Standard Manuscript Format
 %  format description: http://www.shunn.net/format/poem.html
@@ -12,18 +12,19 @@
 %     (e.g. poem.md)
 %  3. then CD into the directory with the file you'd like to convert
 %  4.  use a command like:
-%      pandoc poem.md --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block --output=poem.pdf
+%      pandoc poem.txt --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=chapbook.pdf
 %
-% ------------------------------------------------------------------------------
+%  note this has deprecated `markdown_github`the new method doesn't yet do linebreaks as expected.
+% =============================================================================
 
 
-%-------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % PREAMBLE
-%-------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 
 \documentclass[12pt,oneside]{scrartcl}
 
-% DOCUMENT CLASS----------------------------------------------------------------
+% DOCUMENT CLASS --------------------------------------------------------------
 
   % The first line is a pseudo-comment, to use XeTeX
   % in general, LaTeX 'comments' begin with % and end with linebreak.
@@ -55,7 +56,7 @@
 
   % Enough about the document class.
 
-% VARIABLES-----------------------------------------------------------------------
+% VARIABLES--------------------------------------------------------------------
   % either the YAML header of the markup file
   % or the pandoc command can specify values for 'author', 'title', etc.
   % here's some setup for those things
@@ -67,9 +68,9 @@
   \def\surname{LastName}
   % dunno how to do linecount, so have that in your YAML too
   \def\linecount{$linecount$}
-  \def\address{Address Goes Here\\City, ST 12345\\(555) 555-5555\\you@example.com}
+  \def\address{512 Cathedral St. \#1\\Baltimore, MD 21201\\dylan@nocategories.net}
 
-% PACKAGES------------------------------------------------------------------------
+% PACKAGES---------------------------------------------------------------------
   % The behaviour of LaTeX can be altered by loading "packages" using the
   % \usepackage command. Each one gives us a particular feature to make
   % life easier.
@@ -127,7 +128,7 @@
     % http://tex.stackexchange.com/a/228408/46020
     \makeatletter\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi        \par\@ifstar{\nobreak\@xcentercr}{\nobreak\@xcentercr}}\makeatother
 
-% LINE SPACING----------------------------------------------------------------------
+% LINE SPACING ----------------------------------------------------------------
   % for more info: http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
   \usepackage{setspace}
   \singlespacing
@@ -136,7 +137,7 @@
   %\setstretch{2}
   %\linespread{1.8}
 
-% SECTIONING------------------------------------------------------------------------
+% SECTIONING ------------------------------------------------------------------
 
   % In Standard Manuscript format, all headings are bold, 12pt. on their own line.
     % to acomplish this, the sectsty package is useful
@@ -171,14 +172,14 @@
       \setcounter{secnumdepth}{0}
       $endif$
 
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 % Everything that follows is copied from the pandoc default template:
 % I will interpolate a few comments, the comments that are in
 % the default template will be marked % --
-% ------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
 
 
-% FOOTNOTES---------------------------------------------------------------------
+% FOOTNOTES -------------------------------------------------------------------
   % if you have code in your footnotes, the million macro march
   % kind of bumps into itself.
   % Pandoc, having just rendered your text into LaTeX,
@@ -188,7 +189,7 @@
   \usepackage{fancyvrb}
   $endif$
 
-% LISTS-------------------------------------------------------------------------
+% LISTS -----------------------------------------------------------------------
   % note sure what 'fancy enums' are; something to do with lists,
   % as the further comment suggests:
   $if(fancy-enums)$
@@ -201,7 +202,7 @@
   \usepackage{enumerate}
   $endif$
 
-% TABLE FORMATTING--------------------------------------------------------------
+% TABLE FORMATTING ------------------------------------------------------------
   % What if you make a table? -- Pandoc knows, of course, and
   % then declares that its  variable `table` is True and
   % imports a table package suitable to its pleasantly simple tables.
@@ -229,7 +230,7 @@
   \newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
   $endif$
 
-% LINKS-------------------------------------------------------------------------
+% LINKS -----------------------------------------------------------------------
   % markdown inclines us to use links, since our texts can be made into html.
   % Why not have clickable blue links even in
   % learned, scientific, religious, juridical, poetical and other suchlike texts?
@@ -251,7 +252,7 @@
   \usepackage{url}
   $endif$
 
-% IMAGES------------------------------------------------------------------------
+% IMAGES ----------------------------------------------------------------------
   % In ye olde LaTeX one could only import a limited range of image
   % types. Today we have more options.
 
