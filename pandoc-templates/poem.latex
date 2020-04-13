@@ -9,18 +9,18 @@
 %  2. place a copy of this file in your pandoc templates directory
 %     (by default that directory is ~/.pandoc/templates )
 %     or place this file in the directory with the file to convert 
-%     (e.g. poem.md)
+%     (e.g. poem.txt)
 %  3. then CD into the directory with the file you'd like to convert
 %  4.  use a command like:
-%      pandoc poem.txt --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=chapbook.pdf
+%      pandoc poem.txt --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=poem.pdf
 %
 %  note this has deprecated `markdown_github`the new method doesn't yet do linebreaks as expected.
 % =============================================================================
 
 
-% -----------------------------------------------------------------------------
+% =============================================================================
 % PREAMBLE
-% -----------------------------------------------------------------------------
+% =============================================================================
 
 \documentclass[12pt,oneside]{scrartcl}
 
@@ -86,20 +86,20 @@
   % The `babel` package, among other things, lets you determine language 
   \usepackage[english]{babel}
 
-% PAGE FORMAT-----------------------------------------------------------------------
+% PAGE FORMAT -----------------------------------------------------------------
   \pagestyle{fancy}
   % The default `plain` pagestyle just numbers the pages,
   % whereas
   % \pagestyle{empty}
   % would give you no numbering.
 
-% GEOMETRY, MARGINS, ETC-_----------------------------------------------------------
+% GEOMETRY, MARGINS, ETC ------------------------------------------------------
   % the `geometry` package makes for convenient adjusting of margins, etc.
   \usepackage[letterpaper,includeheadfoot,margin=1in,textheight=600pt,footskip=1in]{geometry}
   % standard manuscript format prefers 1 inch margins
   % with 25 lines of 12pt type, double spaced = 100pt textheight.
 
-% FONTS-----------------------------------------------------------------------------
+% FONTS -----------------------------------------------------------------------
   % Here I set my main font.
   % I prefer Courier Prime but there are other options
   % http://www.candlerblog.com/2012/09/11/which-courier/
@@ -110,7 +110,7 @@
   \setsansfont[Mapping=tex-text]{Courier Prime}
   \setmonofont[Mapping=tex-text]{Courier Prime}
 
-% PARAGRAPH FORMAT------------------------------------------------------------------
+% PARAGRAPH FORMAT ------------------------------------------------------------
   % for a poem, a "paragraph" becomes a "stanza"
     % no need to indent the first lines of a stanza
     \usepackage{indentfirst}
@@ -222,7 +222,7 @@
 
   $endif$
 
-% SUBSCRIPTS--------------------------------------------------------------------
+% SUBSCRIPTS ------------------------------------------------------------------
   % Pandoc remembers whether you used subscripts, assigning True to
   % its `subscript` variable
   % It then needs to adopt a default with an incantation like this:
@@ -269,7 +269,7 @@
   \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
   $endif$
 
-% FOOTNOTES (PART 2)------------------------------------------------------------
+% FOOTNOTES (PART 2) ----------------------------------------------------------
   % Wait, didn't we already discuss the crisis of code in footnotes?
   % Evidently the order of unfolding of macros required that
   % we import a package to deal with them earlier
@@ -280,21 +280,20 @@
   \VerbatimFootnotes % -- allows verbatim text in footnotes
   $endif$
 
-% HEADER INCLUDES---------------------------------------------------------------
+% HEADER INCLUDES -------------------------------------------------------------
   % You can include stuff for the header from a file specified on the command line;
   % I've never done this, but that stuff will go here:
   $for(header-includes)$
   $header-includes$
   $endfor$
 
-% HEADER------------------------------------------------------------------------
-  % ON THE FIRST PAGE, put name, address, telephone number, and e-mail address
-  % in the upper left corner. In the upper right corner of the first page, place an
-  % approximate word count.
+% HEADER ----------------------------------------------------------------------
+  % ON THE FIRST PAGE: name, address, phone, and e-mail
+  % in the upper left. In the upper right, an approximate word count.
 
-  % ON SUBSEQUENT PAGES, put a header in the upper right corner.
-  % This header should have your real surname, one or two important words from the
-  % title, and the current page number.
+  % ON SUBSEQUENT PAGES, put a header in the 
+  % upper right corner should show real surname, few important title words 
+  % and the current page number.
 
   % The fancyhdr package was set up above to enable nice headers and
   % footers. The package uses the command \lhead, \chead, \rhead for
@@ -309,7 +308,7 @@
   \lhead{%
     \ifthenelse{\equal{\thepage}{1}}
       {\author\\\address} % Page one => 5 lines or 60pt
-      {\author\\\title, page \thepage\vspace{36 pt}} % subsequent pages
+      {\author\\\title, page \thepage, begin new stanza\vspace{36 pt}} % subsequent pages
   }
   \rhead{%
     \ifthenelse{\equal{\thepage}{1}}

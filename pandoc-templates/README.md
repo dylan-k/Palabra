@@ -13,15 +13,18 @@ There are command-line utilities and other apps you'll need to have installed be
 - [Xelatex](https://www.latex-project.org/get/) for typesetting, and its pacakge:   
   - [sectsty](https://ctan.org/pkg/sectsty?lang=en)
 
+1. Copy the `.latex` files to the [Pandoc templates](https://pandoc.org/MANUAL.html#templates) directory. By default, that dierctory is `~/.pandoc/templates`.
+2. The `.latex` files are heavily commented with notes that should help you along the way.
+
 ## USAGE
 
 convert your plain-text story/poem into a variety of file types:
 
 - PDF
-    * ``pandoc story.md --pdf-engine=xelatex --template=story.latex --from=markdown_github+yaml_metadata_block --output=story.pdf``
-    * ``pandoc poem.md --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block --output=poem.pdf``
+    * ``pandoc story.md --pdf-engine=xelatex --template=story.latex --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=story.pdf``
+    * ``pandoc poem.txt --pdf-engine=xelatex --template=poem.latex --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=poem.pdf``
 - Word
-    * ``pandoc story.md --reference-doc=story-reference.docx --from=markdown_github+yaml_metadata_block --output=manuscript.docx``
+    * ``pandoc story.md --reference-doc=story-reference.docx --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=manuscript.docx``
 - Open Office?
     * https://github.com/andrewheiss/Global-Pandoc-files/blob/master/templates/odt-manuscript.template
 

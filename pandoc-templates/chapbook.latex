@@ -1,28 +1,19 @@
-% -----------------------------------------------------------------------------
-%  CHAPBOOK TEMPLATE FOR PANDOC
+% =============================================================================
+% CHAPBOOK TEMPLATE FOR PANDOC
 %
-% work in progress. you may prefer https://github.com/dylan-k/pandoc-ebook-template/
+% WORK IN PROGRESS 
+% you may prefer https://github.com/dylan-k/pandoc-ebook-template/
 % 
-%  Given files, this should create a PDF document 
-%  formatted as a chapbook. Poems go in. Chapbook comes out.
-%  Supports the 'novel' manuscript format as well as 'short story.'
-%
-%  An example markdown document: 
-%    https://gist.github.com/dylan-k/d104a80de5fc3cdacabd7923bee96b3a
-%
-%  USAGE
-%  - Place this file in pandoc templates directory  ~/.pandoc/templates
-%  - or in the directory with the file to convert (eg. chapbook.md) 
-%  - use a command like:
-%
-%  pandoc 1.txt 2.txt --pdf-engine=xelatex --template=chapbook.latex --from=markdown_github+yaml_metadata_block+hard_line_breaks --output=chapbook.pdf
-% -----------------------------------------------------------------------------
+% The idea here would be to produce a manuscript for a chapbook collection 
+% of multiple poems. Format should be in standard manuscript format.
+% reference: https://www.shunn.net/format/2014/02/headers_for_multi-page_poem_ma.html
+% =============================================================================
 
 
 
-% -----------------------------------------------------------------------------
+% =============================================================================
 % PREAMBLE
-% -----------------------------------------------------------------------------
+% =============================================================================
 
 %!TEX TS-program = xelatex
 \documentclass[%
@@ -131,8 +122,6 @@
   %   \usepackage{layout} 
 
   % \usepackage[tmargin=1in,rmargin=1.33in,bmargin=1in,lmargin=1.33in,includeheadfoot,footskip=.5in]{geometry}
-  
-
 
 % FONTS------------------------------------------------------------------------
   % Here we set the main fonts for the manuscript. 
@@ -160,7 +149,7 @@
   $if(mathfont)$
     \setmathfont(Digits,Latin,Greek){$mathfont$}
   $endif$
-  
+
 % PARAGRAPH FORMAT-------------------------------------------------------------
   % for verse, a "paragraph" becomes a "stanza"
     % no need to indent the first lines of a stanza
@@ -324,19 +313,19 @@
 
 
 
-%------------------------------------------------------------------------------
+% =============================================================================
 % DOCUMENT
-%------------------------------------------------------------------------------
+% =============================================================================
 
 \begin{document}
 
 % To debug the page layout, uncomment this line:
 %   \layout
 
-% COVER------------------------------------------------------------------------
+% COVER -----------------------------------------------------------------------
   \maketitle
   
-% FRONTMATTER------------------------------------------------------------------
+% FRONTMATTER -----------------------------------------------------------------
   \tableofcontents
   \cleardoubleoddpage
   \pagenumbering{arabic}
@@ -351,9 +340,9 @@
   \leftskip=2em % hanging indent part 1
   \parindent=-2em % hanging indent part 2
 
-% -----------------------------------------------------------------------------
+% =============================================================================
 % BODY
-% -----------------------------------------------------------------------------
+% =============================================================================
 % Now, your actual manuscript content forms the body of the document:
 
 $body$
