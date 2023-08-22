@@ -34,7 +34,7 @@
 # Version: 1.0
 ##########################################################
 
-directory="/path/to/files/"
+directory="/mnt/h/Drive/OneDrive - The Walters Art Museum/Notes"
 declare -A file_data  # Associative array to store file data
 
 # Function to extract date and title from filename
@@ -87,12 +87,20 @@ insert_frontmatter() {
 # Display the list of changes
 # For the files where file_needs_frontmatter is TRUE
 # display the output of extract_date_and_title
+frontmatter_needed=false  # A flag to track if any files need frontmatter
+
 while IFS= read -r -d '' file; do
   if file_needs_frontmatter "$file"; then
     echo "$file needs frontmatter"
     extract_date_and_title "$(basename "$file")"  # Call the function with the filename
+    frontmatter_needed=true  # Set the flag to true if any file needs frontmatter
   fi
 done < <(find "$directory" -type f -name "*.md" -print0)
+
+# If no files need frontmatter, display a message
+if ! $frontmatter_needed; then
+  echo "No files need frontmatter"
+fi
 
 # Prompt for confirmation and insert frontmatter if confirmed
 read -p "Do you want to proceed? (yes/no): " confirmation
