@@ -1,0 +1,31 @@
+# Pandoc Defaults File: poem.yml
+#
+# This defaults file configures Pandoc to convert Markdown files into PDFs
+# using LuaLaTeX, with a specific focus on formatting poetry. It uses a custom
+# LaTeX template, applies a Lua filter for line counts, and handles metadata
+# from a separate YAML file.
+#
+# see also: https://pandoc.org/MANUAL.html#defaults-files
+#
+# Usage:
+#
+# copy (or symlink) this file to padoc's user data directory
+#     Linux/Mac: $HOME/.local/share/pandoc/defaults/
+#     Windows: %APPDATA%\pandoc\defaults
+#
+# Then, to convert a Markdown file named 'input.md' to a PDF 'output.pdf' using
+# this configuration, run the following command in your terminal:
+#
+# pandoc --defaults=poem.yml poem.md -o output.pdf
+
+# Configuration Details:
+pdf-engine: lualatex         # Specifies LuaLaTeX as the PDF engine.
+template: poem.latex         # the custom LaTeX template.
+metadata-files:              # YAML file containing metadata.
+  - author.yml
+filters:                     # Lua filter for processing the document.
+  - linecount.lua
+from: gfm+hard_line_breaks   # Input format: GitHub Markdown with linebreaks.
+
+# Note: This file does not specify 'input-files' or 'output-file' to allow
+# specifying them directly in the command line for each conversion.

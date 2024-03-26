@@ -1,0 +1,7 @@
+# pandoc metadata file
+# copy (or symlink) this file to padoc's user data directory
+# https://pandoc.org/MANUAL.html#option--metadata-file
+surname: "LastName"
+address: "123 Street Address Baltimore, MD 21201"
+email: "person@example.com"
+phone: "(555) 555-5555"
