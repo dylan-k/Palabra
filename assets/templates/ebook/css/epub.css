@@ -1,0 +1,14 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, pre, table, th, td, tr { margin: 0; padding: 0.1em; }
+
+  p{text-indent: 1.5em; margin-bottom: 0.1em; text-align: justify;}
+  p.first{text-indent: 0em; margin-bottom: 0.1em; text-align: justify;}
+  p.title{text-indent: 1.5em; font-weight: bold; font-size: 1.5em;}
+  p.centered{text-indent: 0em; text-align: center;}
+
+  h1.hidden {display:none}
+  h1.chapter {text-align: center;}
+  h3.centered {text-align: center;}
+
+  li.std {text-align: left; margin-left: 4em;}
+
+  span.bold {font-weight:bold;}

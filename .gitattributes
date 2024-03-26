@@ -1,0 +1,18 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+# Git will always convert line endings to LF on checkout. You should use this for files that must keep LF endings, even on Windows.
+* text=auto eol=lf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.pdf binary
+
+# Attributes for markdown and text files
+*.md linguist-detectable
+*.txt linguist-detectable
+*.md linguist-language=Markdown
+*.txt linguist-language=Markdown
+*.md diff=markdown
+*.txt diff=markdown
+*.md filter=tabs-to-spaces
+*.txt filter=tabs-to-spaces

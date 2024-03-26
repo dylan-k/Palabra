@@ -1,9 +1,6 @@
-[submodule "pandoc-workflow"]
-	path = pandoc-workflow
-	url = https://github.com/dhcolumbia/pandoc-workflow.git
 [submodule "bestrew"]
 	path = bestrew
 	url = https://github.com/dylan-k/bestrew
-[submodule "pandoc-ebook-template"]
-	path = pandoc-ebook-template
+[submodule "assets/templates/ebook"]
+	path = assets/templates/ebook
 	url = https://github.com/dylan-k/pandoc-ebook-template

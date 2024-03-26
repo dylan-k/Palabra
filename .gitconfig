@@ -1,0 +1,5 @@
+[core]
+  eol = lf
+  autocrlf = input
+  editor = code --wait
+  symlinks = true

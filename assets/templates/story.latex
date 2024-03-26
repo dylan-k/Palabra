@@ -9,17 +9,6 @@
 %  An example markdown document: 
 %    https://gist.github.com/3d5225d175d53457917c.git
 %
-%  An example YML Frontmatter
-%   ---
-%   title: "Story Title"
-%   author: Firstname Lastname
-%   forename: Firstname
-%   surname: Lastname
-%   runningtitle: story
-%   date: 2020-05-09
-%   wordcount: 300
-%   ---
-%
 %  USAGE
 %  - Place a copy of this file in your pandoc templates directory 
 %  - or place it in the directory with the file to convert (eg. story.md) 
@@ -86,7 +75,7 @@
   % See also: http://stackoverflow.com/questions/2336007/setting-up-author-or-address-string-variables-in-latex
 
   \def\title{$if(title)$$title$$endif$}
-  \def\runningtitle{$if(runningtitle)$$runningtitle$$endif$}
+  \def\runningtitle{$if(shorttitle)$$shorttitle$$endif$}
   \def\author{$if(author)$$author$$endif$}
   \def\forename{$if(forename)$$forename$$endif$}
   \def\surname{$if(surname)$$surname$$endif$}
