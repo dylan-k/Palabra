@@ -1,6 +1,0 @@
-[submodule "pandoc-workflow"]
-	path = pandoc-workflow
-	url = https://github.com/dhcolumbia/pandoc-workflow.git
-[submodule "bestrew"]
-	path = bestrew
-	url = https://github.com/dylan-k/bestrew

@@ -1,6 +1,0 @@
-[submodule "bestrew"]
-	path = bestrew
-	url = https://github.com/dylan-k/bestrew
-[submodule "assets/templates/ebook"]
-	path = assets/templates/ebook
-	url = https://github.com/dylan-k/pandoc-ebook-template
