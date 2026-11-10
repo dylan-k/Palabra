@@ -86,3 +86,8 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 *Questions, ideas, or suggestions? Please open an issue or contribute directly via a pull request.*
+
+## Project Files
+
+- [TODO.md](TODO.md) : current and open tasks
+- [CHANGELOG.md](CHANGELOG.md) : major developments
